@@ -136,10 +136,12 @@ li:hover ul {
 }
 
 .reg {
+  margin: auto;
+  max-width: 1200px;
   text-align: center;
 }
 
-.input {
+.input_search {
   margin-right: 25px;
   margin-left: 20em;
   margin-top: 9px;
@@ -207,6 +209,14 @@ form button:hover {
   display: inline-block;
   border: 1px solid rgb(231, 76, 60);
   border-radius: 7px;
+  display: block;
+}
+
+p.alert {
+  color: rgb(255, 18, 0);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .errors ul {
@@ -218,4 +228,12 @@ form button:hover {
 .success {
   background: rgb(128, 204, 160);
   padding: 5px;
+  display: block;
+}
+
+p.notice {
+  color: rgb(0, 143, 60);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  display: block;
 }
