@@ -11,12 +11,12 @@ gem 'faye'
 gem 'thin'
 
 gem 'bcrypt'
-
 gem 'cancancan'
 
 gem 'i18n'
-
 gem 'rack-utf8_sanitizer'
+
+gem 'friendly_id'
 
 # gem 'therubyracer'
 # gem 'metro-ui-rails'

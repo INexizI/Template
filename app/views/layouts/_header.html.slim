@@ -63,28 +63,28 @@
     input[type="search" placeholder="Search..." autocomplete="off"]
 
   - if user_signed_in?
-    .userbox
-      .qwe
-        ul.menu
-          li.menu_top
-            img#user[src="" alt="avatar"]
-            ul
-              li.submenu
-                a[href="/profiles"]
-                  | Profile
-              li.submenu
-                a[href="/setting"]
-                  | Seting
-              li.submenu
-                = link_to "Sign out", destroy_user_session_path, :method => :delete
-      .qwe
-        .notification
-          div
-            a[href="/mail"]
-              img#logo[src="/images/icon/mail.svg"]
+    .qwe
+      = link_to current_user.username, current_user
+    .qwe
+      ul.menu
+        li.menu_top
+          img#user[src="" alt="avatar"]
+          ul
+            li.submenu
+              a[href="/profiles"]
+                | Profile
+            li.submenu
+              a[href="/setting"]
+                | Seting
+            li.submenu
+              = link_to "Sign out", destroy_user_session_path, :method => :delete
+    / .qwe
+    /   .notification
+    /     div
+    /       a[href="/mail"]
+    /         img#logo[src="/images/icon/mail.svg"]
 
   - else
-
     .qwe
       ul.menu
         li.menu_top

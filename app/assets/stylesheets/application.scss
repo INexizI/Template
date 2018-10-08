@@ -33,7 +33,7 @@ body {
 
 header {
   text-align: center;
-  max-width: 1200px;
+  // max-width: 1200px;
   height: 40px;
   margin: auto;
 }
@@ -54,7 +54,8 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 1200px;
+  width: 100%;
+  // width: 1200px;
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: rgba(130, 130, 130, 1);
@@ -110,7 +111,7 @@ li ul {
   position: absolute;
   display: none;
   background-color: rgba(228, 228, 228, 0.9);
-  margin-left: 2px;
+  margin-left: 15px;
   font-size: 0.85em;
 }
 
@@ -132,7 +133,7 @@ li:hover ul {
 .notification {
   margin-left: -30px;
   margin-top: -2px;
-  display: none;
+  display: block;
 }
 
 .reg {
@@ -142,9 +143,11 @@ li:hover ul {
 }
 
 .input_search {
-  margin-right: 25px;
-  margin-left: 20em;
+  // margin-right: 25px;
+  // margin-left: 20em;
   margin-top: 9px;
+  margin-left: auto;
+  margin-right: 0px;
 }
 
 .logo {

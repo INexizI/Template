@@ -1,0 +1,27 @@
+.banner-container[data-animation="fadeInUp-fadeOutDown-slow"]
+  .hero-wrapper
+    header.hero
+      .profile-info
+        h1.hero-title
+          = @user.username
+  section
+    p
+      b
+        | Username: 
+      = @user.username
+    p
+      b
+        | Real Name: 
+      = @user.realname
+    p
+      b
+        | Birthday: 
+      = @user.birthday
+    p
+      b
+        | About: 
+      = @user.about
+    br
+
+    div
+      = link_to "Edit",  edit_user_registration_path(@user)
