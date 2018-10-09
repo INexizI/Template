@@ -64,11 +64,14 @@
 
   - if user_signed_in?
     .qwe
-      = link_to current_user.username, current_user
+      ul.menu
+        li.menu_top
+          = link_to current_user.username, current_user
     .qwe
       ul.menu
         li.menu_top
-          img#user[src="" alt="avatar"]
+          #user
+            = image_tag(current_user.image.url(:small_thumb), alt: 'X')
           ul
             li.submenu
               a[href="/profiles"]

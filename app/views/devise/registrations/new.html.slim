@@ -14,9 +14,12 @@ section
       br
       = f.input :realname, required: true, input_html: { autocomplete: "realname" }
       br
-      = f.input :birthday, required: true, input_html: { autocomplete: "birthday" }
+      = f.label :birthday
       br
-      = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" }
+      = f.date_field :birthday, required: true, input_html: { autocomplete: "birthday" }
+      br
+      br
+      = f.input :password, required: true, input_html: { autocomplete: "new-password" }
       br
       = f.input :password_confirmation, required: true, input_html: { autocomplete: "new-password" }
       br

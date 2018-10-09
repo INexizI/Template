@@ -9,18 +9,27 @@
       b
         | Username: 
       = @user.username
+    br
     p
       b
         | Real Name: 
       = @user.realname
+    br
     p
       b
         | Birthday: 
       = @user.birthday
+    br
     p
       b
         | About: 
       = @user.about
+    br
+
+    p
+      b
+        | Avatar:
+      = image_tag(@user.image.url(:thumb), alt: 'oops') if @user.image?
     br
 
     div
