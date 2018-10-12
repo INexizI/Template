@@ -1,10 +1,10 @@
 development: &defaults
   adapter: postgresql
   encoding: utf8
-  database: <%= ENV['DATABASE_NAME'] %>
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
+  database: newapp
+  username: postgres
+  password: root
+  host: localhost
   pool: 5
   timeout: 5000
 
