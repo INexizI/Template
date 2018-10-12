@@ -7,7 +7,7 @@
       li.menu_top
         a[href="/games"]
           | Games
-        ul
+        ul.menu
           li.submenu
             a[href="#"]
               | Genres
@@ -48,7 +48,7 @@
     ul.menu
       li.menu_top
         a[href="/infos"]
-          img[src="/images/icon/info.svg"]
+          img#inf[src="/images/icon/info.svg"]
         ul
           li.submenu
             a[href="#"]
@@ -63,24 +63,24 @@
     input[type="search" placeholder="Search..." autocomplete="off"]
 
   - if user_signed_in?
-    .qwe
+    .userbox
       ul.menu
         li.menu_top
           = link_to current_user.username, current_user
-    .qwe
+    .userbox
       ul.menu
         li.menu_top
           #user
             = image_tag(current_user.image.url(:small_thumb), alt: 'X')
-          ul
-            li.submenu
-              a[href="/profiles"]
-                | Profile
-            li.submenu
-              a[href="/setting"]
-                | Seting
-            li.submenu
-              = link_to "Sign out", destroy_user_session_path, :method => :delete
+        ul
+          li.submenu
+            a[href="/profiles"]
+              | Profile
+          li.submenu
+            a[href="/setting"]
+              | Seting
+          li.submenu
+            = link_to "Sign out", destroy_user_session_path, :method => :delete
     / .qwe
     /   .notification
     /     div
