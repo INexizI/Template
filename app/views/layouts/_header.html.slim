@@ -2,7 +2,7 @@
   .logo
     a[href="/"]
       img[src="/images/icon/home.svg" alt="Nexiz"]
-  .qwe
+  .main
     ul.menu
       li.menu_top
         a[href="/games"]
@@ -17,7 +17,7 @@
           li.submenu
             a[href="#"]
               | Announced
-  .qwe
+  .main
     ul.menu
       li.menu_top
         a[href="/news"]
@@ -29,7 +29,7 @@
           li.submenu
             a[href="#"]
               | Technology
-  .qwe
+  .main
     ul.menu
       li.menu_top
         a[href="/communities"]
@@ -44,7 +44,7 @@
           li.submenu
             a[href="#"]
               | Channels
-  .qwe
+  .main
     ul.menu
       li.menu_top
         a[href="/infos"]
@@ -84,7 +84,7 @@
             = link_to current_user do
               = image_tag(current_user.image.url(:small_thumb))
   - else
-    .qwe
+    .main
       ul.menu
         li.menu_top
           img#log[src="/images/icon/log-in.svg" alt="Profile"]
