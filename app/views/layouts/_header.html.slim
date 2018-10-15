@@ -1,7 +1,7 @@
 .inner
   .logo
     a[href="/"]
-      img#logo[src="/images/icon/home.svg" alt="Nexiz"]
+      img[src="/images/icon/home.svg" alt="Nexiz"]
   .qwe
     ul.menu
       li.menu_top
@@ -63,30 +63,26 @@
     input[type="search" placeholder="Search..." autocomplete="off"]
 
   - if user_signed_in?
-    .userbox
-      ul.menu
-        li.menu_top
-          = link_to current_user.username, current_user
-    .userbox
-      ul.menu
-        li.menu_top
-          #user
-            = image_tag(current_user.image.url(:small_thumb), alt: 'X')
-        ul
-          li.submenu
-            a[href="/profiles"]
-              | Profile
-          li.submenu
-            a[href="/setting"]
-              | Seting
-          li.submenu
-            = link_to "Sign out", destroy_user_session_path, :method => :delete
-    / .qwe
-    /   .notification
-    /     div
-    /       a[href="/mail"]
-    /         img#logo[src="/images/icon/mail.svg"]
-
+    .user
+      .userbox
+        ul.menu
+          li.menu_top
+            div
+              = link_to current_user.username, current_user
+            ul
+              li.submenu
+                a[href="/profiles"]
+                  | Profile
+              li.submenu
+                a[href="/setting"]
+                  | Seting
+              li.submenu
+                = link_to "Sign out", destroy_user_session_path, :method => :delete
+      .userbox
+        ul.menu
+          li.menu_top
+            = link_to current_user do
+              = image_tag(current_user.image.url(:small_thumb))
   - else
     .qwe
       ul.menu
@@ -97,6 +93,3 @@
               = link_to 'Registration', new_user_registration_path
             li.submenu
               = link_to 'Login', new_user_session_path
-    / .qwe
-    /   .notification
-    /     div
