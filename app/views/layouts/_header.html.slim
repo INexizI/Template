@@ -71,11 +71,10 @@
               = link_to current_user.username, current_user
             ul
               li.submenu
-                a[href="/profiles"]
-                  | Profile
+                a[href="/#"]
+                  | Mail
               li.submenu
-                a[href="/setting"]
-                  | Seting
+                = link_to "Setting", edit_user_registration_path(current_user)
               li.submenu
                 = link_to "Sign out", destroy_user_session_path, :method => :delete
       .userbox
