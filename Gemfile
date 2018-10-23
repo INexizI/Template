@@ -23,6 +23,8 @@ gem 'paperclip-i18n'
 gem 'mini_magick'
 gem 'file_validators'
 
+gem 'jquery-rails'
+
 # gem 'therubyracer'
 # gem 'metro-ui-rails'
 

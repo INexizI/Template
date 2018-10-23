@@ -205,17 +205,6 @@ form button:hover {
   background: rgb(13, 13, 13);
 }
 
-.errors {
-  background: rgb(231, 151, 145);
-  padding: 5px;
-  margin-bottom: 10px;
-  min-width: 200px;
-  display: inline-block;
-  border: 1px solid rgb(231, 76, 60);
-  border-radius: 7px;
-  display: block;
-}
-
 p.alert {
   color: rgb(255, 18, 0);
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
@@ -223,21 +212,60 @@ p.alert {
   margin-bottom: 10px;
 }
 
-.errors ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.success {
-  background: rgb(128, 204, 160);
-  padding: 5px;
-  display: block;
-}
-
 p.notice {
   color: rgb(0, 143, 60);
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
   padding: 5px;
   display: block;
+}
+
+// .errors {
+//   background: rgb(231, 151, 145);
+//   padding: 5px;
+//   margin-bottom: 10px;
+//   min-width: 200px;
+//   display: inline-block;
+//   border: 1px solid rgb(231, 76, 60);
+//   border-radius: 7px;
+//   display: block;
+// }
+
+// .errors ul {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+// }
+
+// .success {
+//   background: rgb(128, 204, 160);
+//   padding: 5px;
+//   display: block;
+// }
+
+.pr_main {
+  display: flex;
+  flex-direction: row;
+}
+
+.pr_avatar img {
+  height: 124px;
+  width: 124px;
+  border-radius: 50%;
+}
+
+.pr_username {
+  font-size: 2.2em;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.pr_name {
+  margin-left: 20px;
+}
+
+.pr_brth {
+  margin-left: 20px;
+}
+
+.pr_block {
 }

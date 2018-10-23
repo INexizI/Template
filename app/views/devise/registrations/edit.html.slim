@@ -4,18 +4,11 @@ title
 section
   h2
     | Edit profile
-    / = resource_name.to_s.humanize
   br
   = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = f.error_notification
 
     .form-inputs
-      / = f.input :email, required: true, autofocus: true
-      / - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      /   p
-      /     | Currently waiting confirmation for:
-      /     = resource.unconfirmed_email
-      / br
       = f.input :username, required: true, input_html: { autocomplete: "username" }
       br
       = f.input :realname, required: true, input_html: { autocomplete: "realname" }
@@ -46,8 +39,3 @@ section
       = f.button :submit, "Update"
     br
       = link_to "Back", :back
-  / h3
-  /   | Cancel my account
-  / p
-  /   | Unhappy?
-  /   = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete

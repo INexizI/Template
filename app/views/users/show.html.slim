@@ -1,36 +1,32 @@
 title
   = @user.username
 
-.banner-container[data-animation="fadeInUp-fadeOutDown-slow"]
-  .hero-wrapper
-    header.hero
-      .profile-info
-        h1.hero-title
-          | Profile details
-  section
-    p
-      b
-        | Username: 
-      = @user.username
-    br
-    p
-      b
-        | Real Name: 
-      = @user.realname
-    br
-    p
-      b
-        | Birthday: 
-      = @user.birthday
-    br
-    p
-      b
-        | About: 
-      = @user.about
-    br
+h1.reg
+  | Profile details
+section
+  .pr_main
+    .pr_block
+      .pr_avatar
+        = image_tag(@user.image.url(:thumb), alt: 'oops') if @user.image?
+    .pr_block
+      .pr_username
+        = @user.username
+      .pr_name
+        = @user.realname
+      / .pr_brth
+      /   = @user.birthday
 
-    p
-      b
-        | Avatar:
-      = image_tag(@user.image.url(:thumb), alt: 'oops') if @user.image?
-    br
+  hr
+  p
+    b
+      | About: 
+    = @user.about
+
+  / br
+  / = form_with model: [@user, @comment] do |f|
+  /   = f.text_field :body
+  /   = f.submit "Send"
+  /
+  / #comment_div
+  /   - @comments.each do |comment|
+  /     = render 'comments/comment', comment: comment
