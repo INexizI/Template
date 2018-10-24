@@ -2,40 +2,71 @@ title
   | Edit
 
 section
-  h2
-    | Edit profile
-  br
   = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = f.error_notification
 
-    .form-inputs
-      = f.input :username, required: true, input_html: { autocomplete: "username" }
-      br
-      = f.input :realname, required: true, input_html: { autocomplete: "realname" }
-      br
-      = f.label :birthday
-      br
-      = f.date_field :birthday, required: true, input_html: { autocomplete: "birthday" }
-      br
-      br
-      = f.label :about
-      br
-      = f.text_area :about, input_html: { autocomplete: "about" }
-      br
-      br
-      = f.label :image
-      br
-      = f.file_field :image
-      br
-      = f.hidden_field :image_cache
-      br
-      = f.input :password, hint: "leave it blank if you don't want to change it", required: false, input_html: { autocomplete: "new-password" }
-      br
-      = f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password" }
-      br
-      = f.input :current_password, hint: "we need your current password to confirm your changes", required: true, input_html: { autocomplete: "current-password" }
-      br
-    .form-actions
-      = f.button :submit, "Update"
-    br
-      = link_to "Back", :back
+    .profile
+      header.head
+        = link_to image_tag("/images/icon/arrow-left.svg"), @user, id: "a"
+        | back to profile 
+      .p-edit
+        .headline
+          | Setting
+        .form
+          .form-inputs
+            .edit-left
+              = f.label :email
+              br
+              = f.text_field :email, disabled: "disabled"
+              br
+              br
+              = f.label :username
+              br
+              = f.text_field :username, required: true, input_html: { autocomplete: "username" }
+              br
+              br
+              = f.label :realname
+              br
+              = f.text_field :realname, required: true, input_html: { autocomplete: "realname" }
+              br
+              br
+              = f.label :birthday
+              br
+              = f.date_field :birthday, required: true, input_html: { autocomplete: "birthday" }
+              br
+              br
+              = f.label :about
+              br
+              = f.text_area :about, input_html: { autocomplete: "about" }
+              br
+            .edit-right
+              = f.label :image
+              br
+              = f.file_field :image
+              br
+              br
+              = image_tag @user.image.url
+              br
+              = f.hidden_field :image_cache
+              br
+              = f.label :password
+              br
+              = f.password_field :password, hint: "leave it blank if you don't want to change it", required: false, input_html: { autocomplete: "new-password" }
+              br
+              br
+              = f.label :password_confirmation
+              br
+              = f.password_field :password_confirmation, required: false, input_html: { autocomplete: "new-password" }
+              br
+              br
+              <abbr title="required">* </abbr>
+              // ~^^^ FIXED THIS! ^^^~
+              = f.label :current_password
+              br
+              = f.password_field :current_password, required: true, input_html: { autocomplete: "current_password" }
+              br
+              br
+          .form-actions
+            = f.button :submit, "Update"
+          br
+            = link_to "Back", :back

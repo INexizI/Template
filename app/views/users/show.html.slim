@@ -1,26 +1,23 @@
 title
   = @user.username
 
-h1.reg
-  | Profile details
 section
-  .pr_main
-    .pr_block
-      .pr_avatar
-        = image_tag(@user.image.url(:thumb), alt: 'oops') if @user.image?
-    .pr_block
-      .pr_username
-        = @user.username
-      .pr_name
-        = @user.realname
-      / .pr_brth
-      /   = @user.birthday
+  .profile
+    .profile-head
+      .profile-history
+      .profile-main
+        .profile-avatar
+          = image_tag(@user.image.url(:thumb), alt: 'oops') if @user.image?
+        .profile-header
+          .profile-username
+            = @user.username
+          .profile-misc
+            = @user.realname
+          /   = @user.birthday
+      .profile-info
 
-  hr
-  p
-    b
-      | About: 
-    = @user.about
+
+
 
   / br
   / = form_with model: [@user, @comment] do |f|
