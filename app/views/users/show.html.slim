@@ -4,7 +4,6 @@ title
 section
   .profile
     .profile-head
-      .profile-history
       .profile-main
         .profile-avatar
           = image_tag(@user.image.url(:thumb), alt: 'oops') if @user.image?
@@ -14,6 +13,7 @@ section
           .profile-misc
             = @user.realname
           /   = @user.birthday
+      .profile-history
       .profile-info
 
 

@@ -35,20 +35,6 @@ section
               = f.date_field :birthday, required: true, input_html: { autocomplete: "birthday" }
               br
               br
-              = f.label :about
-              br
-              = f.text_area :about, input_html: { autocomplete: "about" }
-              br
-            .edit-right
-              = f.label :image
-              br
-              = f.file_field :image
-              br
-              br
-              = image_tag @user.image.url
-              br
-              = f.hidden_field :image_cache
-              br
               = f.label :password
               br
               = f.password_field :password, hint: "leave it blank if you don't want to change it", required: false, input_html: { autocomplete: "new-password" }
@@ -66,7 +52,24 @@ section
               = f.password_field :current_password, required: true, input_html: { autocomplete: "current_password" }
               br
               br
+            .edit-right
+              = f.label :image
+              br
+              = f.file_field :image
+              br
+              br
+              = image_tag @user.image.url
+              br
+              = f.hidden_field :image_cache
+              br
+              br
+              = f.label :about
+              br
+              = f.text_area :about, input_html: { autocomplete: "about" }
+              br
           .form-actions
-            = f.button :submit, "Update"
-          br
-            = link_to "Back", :back
+            / = link_to "Back", :back
+            = f.button :button, 'Back', type: :back
+
+            / = f.button :submit, "Update"
+            = f.button :button, "Update", type: :submit
