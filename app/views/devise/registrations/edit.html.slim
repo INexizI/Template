@@ -7,11 +7,12 @@ section
 
     .profile
       header.head
-        = link_to image_tag("/images/icon/arrow-left.svg"), @user, id: "a"
-        | back to profile 
+        = link_to image_tag("/images/icon/arrow-left.svg"), @user
+        p#a
+          | back to profile 
       .p-edit
         .headline
-          | Setting
+          |
         .form
           .form-inputs
             .edit-left
@@ -45,7 +46,8 @@ section
               = f.password_field :password_confirmation, required: false, input_html: { autocomplete: "new-password" }
               br
               br
-              <abbr title="required">* </abbr>
+              abbr[title="required"]
+              | *
               // ~^^^ FIXED THIS! ^^^~
               = f.label :current_password
               br
@@ -68,8 +70,9 @@ section
               = f.text_area :about, input_html: { autocomplete: "about" }
               br
           .form-actions
-            / = link_to "Back", :back
-            = f.button :button, 'Back', type: :back
-
-            / = f.button :submit, "Update"
-            = f.button :button, "Update", type: :submit
+            p.left-btn
+              / = link_to "Back", :back
+              = f.button :button, 'Back', type: :back
+            p.right-btn
+              / = f.button :submit, "Update"
+              = f.button :button, "Update", type: :submit
