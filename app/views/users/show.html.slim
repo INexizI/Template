@@ -11,8 +11,10 @@ section
           .profile-username
             = @user.username
           .profile-misc
-            = @user.realname
-          /   = @user.birthday
+            span#a
+              = @user.realname
+            span
+              =@user.birthday.strftime("%e %B")
       .profile-history
       .profile-info
 

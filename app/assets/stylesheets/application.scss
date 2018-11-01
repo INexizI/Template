@@ -4,7 +4,15 @@
   padding: 0px;
 }
 
-#a::before {
+#a::after {
+    color: rgb(157, 162, 168);
+    content: '/';
+    display: inline-block;
+    font-weight: normal;
+    padding: 0 7px;
+}
+
+#b::before {
     color: rgb(157, 162, 168);
     content: '/';
     display: inline-block;
@@ -15,6 +23,7 @@
 input, select, button, textarea {
   font-family: inherit;
   border-radius: 10px !important;
+  outline: none;
 }
 
 ::-webkit-scrollbar {
