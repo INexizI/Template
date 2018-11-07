@@ -1,0 +1,22 @@
+p
+  strong Title:
+  = @game.title
+p
+  strong Description:
+  = @game.description
+p
+  strong Poster:
+  = image_tag(@game.poster.url(:thumb))
+p
+  strong Release:
+  = @game.release.strftime("%e %B %Y")
+p
+  strong Genre:
+  = @game.tag_list
+p
+  strong Studio:
+  = @game.studio
+
+=> link_to 'Edit', edit_game_path(@game)
+'|
+=< link_to 'Back', games_path

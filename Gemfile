@@ -25,6 +25,8 @@ gem 'file_validators'
 
 gem 'jquery-rails'
 
+gem 'acts-as-taggable-on'
+
 # gem 'therubyracer'
 # gem 'metro-ui-rails'
 

@@ -1,0 +1,47 @@
+= simple_form_for(@game) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  br
+  .form-inputs
+    = f.label :title
+    br
+    = f.text_field :title
+    br
+    br
+    = f.label :description
+    br
+    = f.text_area :description
+    br
+    br
+    = f.label :poster
+    br
+    = f.file_field :poster
+    br
+  	br
+    = f.label :release
+    br
+    = f.date_field :release
+    br
+    br
+    = f.label :tag_list, "Tags (separated by commas)"
+    br
+    = f.text_field :tag_list
+    br
+    br
+    / = f.label :genre
+    / br
+    / = f.text_field :genre
+    / br
+    / br
+    / = f.label :all_tags
+    / br
+    / = f.text_field :all_tags
+    / br
+    / br
+    = f.label :studio
+    br
+    = f.text_field :studio
+    br
+    br
+  .form-actions
+    = f.button :submit

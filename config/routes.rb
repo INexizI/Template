@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     resources :comments, only: [:create, :destroy]
   end
+  resources :games
+  get 'games/genre/:tag', to: 'games#index', as: :tag
 
 end
