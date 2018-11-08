@@ -45,7 +45,7 @@ class GamesController < ApplicationController
   private
 
     def set_game
-      @game = Game.find(params[:id])
+      @game = Game.friendly.find(params[:id])
     end
 
     def game_params
