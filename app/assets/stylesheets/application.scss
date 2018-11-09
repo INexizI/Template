@@ -365,7 +365,7 @@ p.notice {
 }
 
 /*
-  Esit Setting
+  User Setting
 */
 
 header.head {
@@ -440,4 +440,55 @@ header.head {
 .right-btn {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+/*
+  Game Setting
+*/
+
+.g-block {
+  display: flex;
+  // border: 1px solid;
+  margin-bottom: 5px;
+  max-width: 1000px;
+}
+
+.g-link {
+  display: flex;
+  margin: auto;
+}
+
+.g-info {
+  width: 500px;
+  margin: auto;
+}
+
+.game-title {
+  font-weight: bold;
+}
+
+.game-description {
+
+}
+
+.game-poster {
+  margin: auto 0 auto 0;
+  padding: auto;
+}
+
+.game-poster img {
+  max-width: 160px;
+  max-height: 320px;
+}
+
+.game-release {
+
+}
+
+.game-tag {
+
+}
+
+.game-studio {
+
 }

@@ -1,36 +1,43 @@
 title
   | Games
-h1 Games
-br
-table
-  thead
-    tr
-      th Title
-      th Description
-      th Poster
-      th Release
-      th Genre
-      th Studio
-      th
-      th
-      th
 
-  tbody
+section
+  div
     - @games.each do |game|
-      tr
-        td = game.title
-        td = game.description
-        td = image_tag(game.poster.url(:small_thumb))
-        td = game.release.strftime("%e %B %Y")
-        td = raw game.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-        / td
-        /  - game.tag_list.each do |tag|
-        /   = link_to tag, tag_path(tag: tag)
-        td = game.studio
-        td = link_to 'Show', game
-        td = link_to 'Edit', edit_game_path(game)
-        td = link_to 'Destroy', game, data: { confirm: 'Are you sure?' }, method: :delete
+      .g-block
+        .game-poster  = link_to game do
+                        = image_tag(game.poster.url)
+        .g-info
+          .game-title = game.title
+          br
+          .game-description
+            | Description:
+            br
+            = game.description
+          br
+          .game-release
+            | Release
+            br
+            = game.release.strftime("%e %B %Y")
+          br
+          .game-tag
+            | Genre
+            br
+            = raw game.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+          br
+          / td
+          /  - game.tag_list.each do |tag|
+          /   = link_to tag, tag_path(tag: tag)
+          .game-studio
+            | Studio
+            br
+            = game.studio
+          br
+        .g-link
+          p#a = link_to 'Show', game
+          p#a = link_to 'Edit', edit_game_path(game)
+          p = link_to 'Delete', game, data: { confirm: 'Are you sure?' }, method: :delete
 
-br
+  br
 
-= link_to 'New Game', new_game_path
+  = link_to 'New Game', new_game_path
