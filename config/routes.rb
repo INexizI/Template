@@ -4,10 +4,11 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update]
+  resources :games do
     resources :comments, only: [:create, :destroy]
   end
-  resources :games
+  
   get 'games/genre/:tag', to: 'games#index', as: :tag
 
 end

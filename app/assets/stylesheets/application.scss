@@ -4,12 +4,12 @@
   padding: 0px;
 }
 
-#a::after {
-    color: rgb(157, 162, 168);
-    content: '/';
-    display: inline-block;
-    font-weight: normal;
-    padding: 0 7px;
+#a:not(:last-of-type)::after {
+  color: rgb(80, 80, 80);
+  content: '/';
+  display: inline-block;
+  font-weight: normal;
+  padding: 0 7px;
 }
 
 #b::before {

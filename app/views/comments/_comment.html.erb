@@ -3,7 +3,7 @@
   [<%= comment.created_at.strftime("%R") %>]
   <%= comment.user.username %>
   <% if current_user && current_user == comment.user %>
-    <%= link_to "Delete", user_comment_path(@profile, comment),
+    <%= link_to "Delete", game_comment_path(@game, comment),
      method: :delete, remote: true, style: "float: right" %>
 
   <% end %>

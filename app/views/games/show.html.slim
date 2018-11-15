@@ -33,7 +33,7 @@ section
         = image_tag(@game.poster.url)
         .g-link
           p#a = link_to 'Edit', edit_game_path(@game)
-          p = link_to 'Back', games_path
+          p#a = link_to 'Back', games_path
       .g-info-show
         .game-title = @game.title
         br
@@ -50,13 +50,22 @@ section
         .game-tag
           | Genre
           br
-          = raw @game.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
-        br
-        / td
-        /  - @game.tag_list.each do |tag|
-        /   = link_to tag, tag_path(tag: tag)
+        td
+         - @game.tag_list.each do |tag|
+          = link_to tag, tag_path(tag: tag), id: "c"
+         br
+         br
         .game-studio
           | Studio
           br
           = @game.studio
         br
+  / hr
+  /   br
+  /   = form_with model: [@game, @comment] do |f|
+  /     = f.text_field :body
+  /     = f.submit "Send"
+  /
+  /   #comment_div
+  /     - @comments.each do |comment|
+  /       = render 'comments/comment', comment: comment

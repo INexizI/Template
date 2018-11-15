@@ -10,6 +10,8 @@ class GamesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @game.comments.order("created_at DESC")
   end
 
   def new

@@ -8,4 +8,6 @@ class Game < ApplicationRecord
   acts_as_taggable_on :tags
 
   validates :title, presence: true
+
+  has_many :comments, dependent: :destroy
 end

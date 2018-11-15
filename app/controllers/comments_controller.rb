@@ -1,15 +1,15 @@
 class CommentsController < ApplicationController
-  before_action :set_user
+  before_action :set_game
   before_action :authenticate_user!
 
   def create
-    @comment = @puser.comments.new(comment_params)
+    @comment = @game.comments.new(comment_params)
     @comment.user = current_user
     @comment.save
   end
 
   def destroy
-    @comment = @user.comments.find(params[:id])
+    @comment = @game.comments.find(params[:id])
     @comment_id = @comment.id
     @comment.destroy
   end
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:body, :id)
     end
 
-    def set_profile
-      @user = User.find(params[:id])
+    def set_game
+      @game = Game.find(params[:id])
     end
 end
