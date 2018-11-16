@@ -1,28 +1,3 @@
-/ title
-/   = @game.title
-/ p
-/   strong Title:
-/   = @game.title
-/ p
-/   strong Description:
-/   = @game.description
-/ p
-/   strong Poster:
-/   = image_tag(@game.poster.url(:thumb))
-/ p
-/   strong Release:
-/   = @game.release.strftime("%e %B %Y")
-/ p
-/   strong Genre:
-/   = @game.tag_list
-/ p
-/   strong Studio:
-/   = @game.studio
-/
-/ => link_to 'Edit', edit_game_path(@game)
-/ '|
-/ =< link_to 'Back', games_path
-
 title
   | Games
 
@@ -52,7 +27,7 @@ section
           br
         td
          - @game.tag_list.each do |tag|
-          = link_to tag, tag_path(tag: tag), id: "c"
+          = link_to tag, tag_path(tag: tag), id: "a"
          br
          br
         .game-studio
@@ -60,12 +35,12 @@ section
           br
           = @game.studio
         br
-  / hr
-  /   br
-  /   = form_with model: [@game, @comment] do |f|
-  /     = f.text_field :body
-  /     = f.submit "Send"
-  /
-  /   #comment_div
-  /     - @comments.each do |comment|
-  /       = render 'comments/comment', comment: comment
+  hr
+    br
+    = form_with model: [@game, @comment] do |f|
+      = f.text_field :body
+      = f.submit "Send"
+
+    #comment_div
+      - @comments.each do |comment|
+        = render 'comments/comment', comment: comment

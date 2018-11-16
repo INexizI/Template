@@ -17,10 +17,10 @@ class CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:body, :id)
+      params.require(:comment).permit(:body, :game_id)
     end
 
     def set_game
-      @game = Game.find(params[:id])
+      @game = Game.find(params[:game_id])
     end
 end
