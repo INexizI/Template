@@ -4,8 +4,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @comment = Comment.new
-    @comments = @user.comments.order("created_at DESC")
   end
 
   def edit
