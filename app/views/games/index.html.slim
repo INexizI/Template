@@ -11,10 +11,11 @@ section
               = image_tag(game.poster.url)
               .g-info
                 .game-title = game.title
-          .g-link
-            p#a = link_to 'Show', game
-            p#a = link_to 'Edit', edit_game_path(game)
-            p#a = link_to 'Delete', game, data: { confirm: 'Are you sure?' }, method: :delete
+          - if current_user && current_user.admin
+            .g-link
+              p#a = link_to 'Show', game
+              p#a = link_to 'Edit', edit_game_path(game)
+              p#a = link_to 'Delete', game, data: { confirm: 'Are you sure?' }, method: :delete
         .g-sub
           #g-sub
             .game-description

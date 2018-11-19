@@ -1,9 +1,9 @@
 title
   | Edit game
 h1 Change game info
+- if current_user && current_user.admin
+  == render 'form'
 
-== render 'form'
-
-=> link_to 'Show', @game
-'|
-=< link_to 'Back', games_path
+  => link_to 'Show', @game
+  '|
+  =< link_to 'Back', games_path

@@ -514,3 +514,9 @@ header.head {
   border: 1px solid black;
   padding: 5px 0px 0px 5px;
 }
+
+#c-img img {
+  max-width: 32px;
+  max-height: 32px;
+  border-radius: 16px;
+}
