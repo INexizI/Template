@@ -39,9 +39,9 @@ section
             .game-studio
               | Studio
               br
-              = game.studio
+              = link_to game.studio.name, game.studio
             br
 
   br
-
-  = link_to 'New Game', new_game_path
+  - if current_user && current_user.admin
+    = link_to 'New Game', new_game_path

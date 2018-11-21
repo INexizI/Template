@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :games do
     resources :comments, only: [:create, :destroy]
   end
-  
+  resources :studios
+
   get 'games/genre/:tag', to: 'games#index', as: :tag
 
 end

@@ -29,7 +29,6 @@ class GamesController < ApplicationController
     else
       render :new
     end
-
   end
 
   def update
@@ -46,12 +45,11 @@ class GamesController < ApplicationController
 
   private
 
+    def game_params
+      params.require(:game).permit(:title, :description, :poster, :release, :genre, :tag_list, :studio_id)
+    end
+
     def set_game
       @game = Game.friendly.find(params[:id])
     end
-
-    def game_params
-      params.require(:game).permit(:title, :description, :poster, :release, :genre, :studio, :tag_list)
-    end
-
 end

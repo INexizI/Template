@@ -6,7 +6,6 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.string :poster
       t.date :release
       t.text :genre
-      t.string :studio
 
       t.timestamps
     end

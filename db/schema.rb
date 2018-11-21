@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_093341) do
+ActiveRecord::Schema.define(version: 2018_11_21_142240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,22 @@ ActiveRecord::Schema.define(version: 2018_11_19_093341) do
     t.string "poster"
     t.date "release"
     t.text "genre"
-    t.string "studio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.bigint "studio_id"
     t.index ["slug"], name: "index_games_on_slug", unique: true
+    t.index ["studio_id"], name: "index_games_on_studio_id"
+  end
+
+  create_table "studios", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "logotype"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_studios_on_slug", unique: true
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -97,4 +108,5 @@ ActiveRecord::Schema.define(version: 2018_11_19_093341) do
 
   add_foreign_key "comments", "games"
   add_foreign_key "comments", "users"
+  add_foreign_key "games", "studios"
 end

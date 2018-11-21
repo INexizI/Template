@@ -1,0 +1,38 @@
+title
+  | Studios
+
+section
+  .g-all
+    .g-block-show
+      .game-poster
+        = image_tag(@studio.logotype.url)
+        - if current_user && current_user.admin
+          .g-link
+            p#a = link_to 'Edit', edit_studio_path(@studio)
+            p#a = link_to 'Back', studios_path
+      .g-info-show
+        .game-title = @studio.name
+        br
+        .game-description
+          | Description:
+          br
+          = @studio.description
+        br
+
+  / br
+  /   p
+  /   | COMMENTS
+  /   br
+  /   - if user_signed_in?
+  /     br
+  /     = form_with model: [@game, @comment] do |f|
+  /       = f.text_field :body
+  /       = f.submit "Send"
+  /
+  /   - else
+  /     b
+  /     | Sign In to comment
+  /
+  /   #comment_div
+  /     - @comments.each do |comment|
+  /       = render 'comments/comment', comment: comment

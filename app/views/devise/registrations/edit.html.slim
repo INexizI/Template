@@ -71,8 +71,7 @@ section
               br
           .form-actions
             p.left-btn
-              / = link_to "Back", :back
-              = f.button :button, 'Back', type: :back
+              = f.button :button
+                = link_to 'Back', :back
             p.right-btn
-              / = f.button :submit, "Update"
               = f.button :button, "Update", type: :submit

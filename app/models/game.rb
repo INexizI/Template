@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+  belongs_to :studio
   mount_uploader :poster, ImageUploader
 
   extend FriendlyId
