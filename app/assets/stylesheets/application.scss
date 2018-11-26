@@ -20,6 +20,10 @@
     padding: 0 7px;
 }
 
+a {
+  color: rgb(0, 0, 0);
+}
+
 input, select, button, textarea {
   font-family: inherit;
   border-radius: 10px !important;
@@ -437,6 +441,19 @@ header.head {
   margin-left: auto;
 }
 
+.left-btn a {
+  color: rgb(0, 0, 0);
+}
+
+.left-btn:hover a {
+  color: rgb(180, 180, 180);
+}
+
+.left-btn:hover .btn {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: rgb(13, 13, 13);
+}
+
 .right-btn {
   margin-left: 10px;
   margin-right: 10px;
@@ -503,15 +520,16 @@ header.head {
 .g-block:hover .g-sub {
   display: block;
   position: relative;
-  right: -150px;
+  right: -140px;
   bottom: 216px;
 }
 
 #g-sub {
   width: 220px;
   height: auto;
-  background: white;
-  border: 1px solid black;
+  background: rgb(226, 226, 226);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
   padding: 5px 0px 0px 5px;
 }
 
