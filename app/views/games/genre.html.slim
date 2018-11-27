@@ -1,0 +1,10 @@
+title
+  | Genres
+
+section
+  .g-all
+    h3
+      - @games.each do |game|
+        - game.tag_list.each do |tag|
+          = link_to tag, tag_path(tag: tag)
+          br

@@ -18,6 +18,10 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
+  def genre
+    @games = Game.all
+  end
+
   def edit
   end
 
