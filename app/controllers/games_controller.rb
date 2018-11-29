@@ -5,7 +5,8 @@ class GamesController < ApplicationController
     if params[:tag].present?
       @games = Game.tagged_with(params[:tag])
     else
-      @games = Game.all
+      # @games = Game.all
+      @games = Game.where({ release: (Time.now.midnight - 100.year)..(Time.now.midnight) })
     end
   end
 
@@ -20,6 +21,10 @@ class GamesController < ApplicationController
 
   def genre
     @games = Game.all
+  end
+
+  def announced
+    @games = Game.where({ release: (Time.now.midnight + 1.day)..(Time.now.midnight + 10.year) })
   end
 
   def edit

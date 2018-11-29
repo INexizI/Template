@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :studios
 
   get 'games/genre/:tag', to: 'games#index', as: :tag
+  get 'announced', to: 'games#announced'
   get 'genres', to: 'games#genre'
 
 end
