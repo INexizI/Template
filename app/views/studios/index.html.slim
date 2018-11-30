@@ -6,17 +6,19 @@ section
     - @studios.each do |studio|
       .g-block
         .game-poster
-          div
+          .g-poster
             = link_to studio do
               = image_tag(studio.logotype.url)
               .g-info
                 .game-title = studio.name
           - if current_user && current_user.admin
             .g-link
-              p#a = link_to 'Show', studio
-              p#a = link_to 'Edit', edit_studio_path(studio)
-              p#a = link_to 'Delete', studio, data: { confirm: 'Are you sure?' }, method: :delete
-
+              p#a = link_to studio do
+                    = image_tag("/images/icon/search.svg")
+              p#a = link_to edit_studio_path(studio) do
+                    = image_tag("/images/icon/settings.svg")
+              p#a = link_to studio, data: { confirm: 'Are you sure?' }, method: :delete do
+                    = image_tag("/images/icon/delete.svg")
   br
   - if current_user && current_user.admin
     = link_to 'New Game', new_studio_path

@@ -24,10 +24,10 @@
           | News
         ul
           li.submenu
-            a[href="#"]
+            a[href="/game-news"]
               | Game
           li.submenu
-            a[href="#"]
+            a[href="/technology"]
               | Technology
   .main
     ul.menu
@@ -74,7 +74,7 @@
                 a[href="/#"]
                   | Mail
               li.submenu
-                = link_to "Setting", edit_user_registration_path(current_user)
+                = link_to "Settings", edit_user_registration_path(current_user)
               li.submenu
                 = link_to "Sign out", destroy_user_session_path, :method => :delete
       .userbox

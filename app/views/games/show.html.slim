@@ -5,11 +5,14 @@ section
   .g-all
     .g-block-show
       .game-poster
-        = image_tag(@game.poster.url)
+        .g-poster
+          = image_tag(@game.poster.url)
         - if current_user && current_user.admin
           .g-link
-            p#a = link_to 'Edit', edit_game_path(@game)
-            p#a = link_to 'Back', games_path
+            p#a = link_to edit_game_path(@game) do
+                  = image_tag("/images/icon/settings.svg")
+            p#a = link_to games_path do
+                  = image_tag("/images/icon/arrow-left.svg")
       .g-info-show
         .game-title = @game.title
         br

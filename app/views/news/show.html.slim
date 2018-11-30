@@ -1,0 +1,20 @@
+title
+  | News
+
+section
+  div
+    strong Title: 
+    = @news.title
+  div
+    = image_tag @news.post_pic.url(:thumb)
+  div
+    strong News:
+    br
+    = @news.news
+  br
+    - if current_user && current_user.admin
+      .g-link
+        p#a = link_to edit_news_path(@news) do
+              = image_tag("/images/icon/settings.svg")
+        p#a = link_to news_index_path do
+              = image_tag("/images/icon/arrow-left.svg")

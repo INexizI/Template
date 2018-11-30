@@ -6,16 +6,19 @@ section
     - @games.each do |game|
       .g-block
         .game-poster
-          div
+          .g-poster
             = link_to game do
               = image_tag(game.poster.url)
               .g-info
                 .game-title = game.title
           - if current_user && current_user.admin
             .g-link
-              p#a = link_to 'Show', game
-              p#a = link_to 'Edit', edit_game_path(game)
-              p#a = link_to 'Delete', game, data: { confirm: 'Are you sure?' }, method: :delete
+              p#a = link_to game do
+                    = image_tag("/images/icon/search.svg")
+              p#a = link_to edit_game_path(game) do
+                    = image_tag("/images/icon/settings.svg")
+              p#a = link_to game, data: { confirm: 'Are you sure?' }, method: :delete do
+                    = image_tag("/images/icon/delete.svg")
         .g-sub
           #g-sub
             .game-description

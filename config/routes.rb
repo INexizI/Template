@@ -8,10 +8,19 @@ Rails.application.routes.draw do
   resources :games do
     resources :comments, only: [:create, :destroy]
   end
-  resources :studios
+  resources :studios do
+    resources :comments, only: [:create, :destroy]
+  end
+  resources :news do
+    resources :comments, only: [:create, :destroy]
+  end
 
   get 'games/genre/:tag', to: 'games#index', as: :tag
+
   get 'announced', to: 'games#announced'
   get 'genres', to: 'games#genre'
+
+  get 'technology', to: 'news#technology'
+  get 'game-news', to: 'news#game'
 
 end

@@ -24,7 +24,12 @@ class GamesController < ApplicationController
   end
 
   def announced
-    @games = Game.where({ release: (Time.now.midnight + 1.day)..(Time.now.midnight + 10.year) })
+    if params[:tag].present?
+      @games = Game.tagged_with(params[:tag])
+    else
+      # @games = Game.all
+      @games = Game.where({ release: (Time.now.midnight + 1.day)..(Time.now.midnight + 10.year) })
+    end
   end
 
   def edit
