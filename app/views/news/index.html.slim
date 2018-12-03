@@ -3,16 +3,19 @@ title
 
 section
   - @news.each do |news|
-    .n-title
-      h2
-        = link_to news do
-          = news.title
     .n-body
-      = link_to news do
-        = image_tag news.post_pic.url(:thumb)
-      = news.news
+      .i-img
+        = link_to news do
+          = image_tag news.post_pic.url(:thumb)
+      .n-news
+        .n-title
+          h2
+            = link_to news do
+              = news.title
+        .n-text
+          = news.news
     - if current_user && current_user.admin
-      .g-link
+      .n-link
         p#a = link_to news do
               = image_tag("/images/icon/search.svg")
         p#a = link_to edit_news_path(news) do
@@ -20,5 +23,6 @@ section
         p#a = link_to news, data: { confirm: 'Are you sure?' }, method: :delete do
               = image_tag("/images/icon/x.svg")
     br
-
-  = link_to 'New News', new_news_path
+    
+  - if current_user && current_user.admin
+    = link_to 'New News', new_news_path

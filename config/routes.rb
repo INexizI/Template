@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   get 'genres', to: 'games#genre'
 
   get 'technology', to: 'news#technology'
-  get 'game-news', to: 'news#game'
+  get 'game', to: 'news#game'
 
 end

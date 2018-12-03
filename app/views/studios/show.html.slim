@@ -21,3 +21,20 @@ section
           br
           = @studio.description
         br
+  / br
+  /   p
+  /   | COMMENTS
+  /   br
+  /   - if user_signed_in?
+  /     br
+  /     = form_with model: [@studio, @comment] do |f|
+  /       = f.text_field :body
+  /       = f.submit "Send"
+  /
+  /   - else
+  /     b
+  /     | Sign In to comment
+  /
+  /   #comment_div
+  /     - @comments.each do |comment|
+  /       = render 'comments/comment', comment: comment

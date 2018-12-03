@@ -14,7 +14,7 @@ class NewsController < ApplicationController
     @news = News.new
   end
 
-  def gamenews
+  def game
     @news = News.where( option: true )
   end
 

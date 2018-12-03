@@ -2,15 +2,17 @@ title
   | News
 
 section
-  div
-    strong Title: 
-    = @news.title
-  div
-    = image_tag @news.post_pic.url(:thumb)
-  div
-    strong News:
-    br
-    = @news.news
+  .n-body
+    .i-img
+      = link_to @news do
+        = image_tag @news.post_pic.url(:thumb)
+    .n-news
+      .n-title
+        h2
+          = link_to @news do
+            = @news.title
+      .n-text
+        = @news.news
   br
     - if current_user && current_user.admin
       .g-link

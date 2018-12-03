@@ -369,7 +369,7 @@ p.notice {
 }
 
 /*
-  User Setting
+  User settings
 */
 
 header.head {
@@ -460,7 +460,7 @@ header.head {
 }
 
 /*
-  Game Setting
+  Game settings
 */
 
 .g-all {
@@ -540,4 +540,30 @@ header.head {
   max-width: 32px;
   max-height: 32px;
   border-radius: 16px;
+}
+
+/*
+  News settings
+*/
+
+.n-title {
+  margin-bottom: 3px;
+  padding: 3px 0px 5px 15px;
+}
+
+.n-body {
+  display: flex;
+  border: 1px solid;
+  padding: 10px 0px 5px 15px;
+}
+
+.n-news {
+  padding-left: 10px;
+}
+
+.n-link {
+  display: flex;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  padding: 3px 0px 5px 15px;
 }
