@@ -1,13 +1,15 @@
 <br>
 <div id="comment-<%= comment.id %>">
-  <div id="c-img">
-    <%= image_tag(comment.user.image.url)%>
-    <%= link_to comment.user.username, comment.user %>
+  <div id="c-comment">
+    <%= image_tag(comment.user.image.url, id: "c-img")%>
+    <%= link_to comment.user.username, comment.user, id: "c-user" %>
   <% if current_user && current_user == comment.user || current_user.admin %>
     <%= link_to image_tag("/images/icon/x.svg"), game_comment_path(@game, comment),
     method: :delete, remote: true, style: "float: right" %>
   <% end %>
   <small> [<%= comment.created_at.strftime("%D   %R") %>] </small>
   <hr>
-  <%= comment.body %>
+  <div id="c-body">
+    <%= comment.body %>
+  </div>
 </div>
