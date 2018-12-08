@@ -8,7 +8,7 @@ section
         .g-poster
           = image_tag(@game.poster.url)
         - if current_user && current_user.admin
-          .g-link
+          .link
             p#a = link_to edit_game_path(@game) do
                   = image_tag("/images/icon/settings.svg")
             p#a = link_to games_path do
@@ -46,8 +46,7 @@ section
       br
       = form_with model: [@game, @comment] do |f|
         = f.text_field :body
-        = f.submit "Send"
-
+        = f.button "Send", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."}
     - else
       b
       | Sign In to comment

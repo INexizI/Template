@@ -74,4 +74,4 @@ section
               = f.button :button
                 = link_to 'Back', :back
             p.right-btn
-              = f.button :button, "Update", type: :submit
+              = f.button :button, "Update", type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Updating..."}

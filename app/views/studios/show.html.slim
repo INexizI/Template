@@ -8,7 +8,7 @@ section
         .g-poster
           = image_tag(@studio.logotype.url)
         - if current_user && current_user.admin
-          .g-link
+          .link
             p#a = link_to edit_studio_path(@studio) do
                   = image_tag("/images/icon/settings.svg")
             p#a = link_to studios_path do
