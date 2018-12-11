@@ -15,7 +15,7 @@ section
         .n-text
           = news.news
     - if current_user && current_user.admin
-      .n-link
+      .g-link
         p#a = link_to news do
               = image_tag("/images/icon/search.svg")
         p#a = link_to edit_news_path(news) do
@@ -23,6 +23,6 @@ section
         p#a = link_to news, data: { confirm: 'Are you sure?' }, method: :delete do
               = image_tag("/images/icon/x.svg")
     br
-    
+
   - if current_user && current_user.admin
     = link_to 'New News', new_news_path

@@ -14,10 +14,12 @@
     </div>
   </div>
   <div class="c-delete">
-    <% if current_user && current_user == comment.user || current_user.admin %>
+  <% if user_signed_in? %>
+    <% if current_user == comment.user || current_user.admin %>
     <%= link_to image_tag("/images/icon/x.svg"), game_comment_path(@game, comment),
     method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
     <% end %>
+  <% end %>
   </div>
   <hr>
   <div class="c-body">

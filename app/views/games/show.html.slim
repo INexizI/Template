@@ -48,8 +48,9 @@ section
         = f.text_field :body
         = f.button "Send", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."}
     - else
+      br
       b
-      | Sign In to comment
+        | Sign In to comment
 
     #comment_div
       - @comments.each do |comment|

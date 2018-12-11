@@ -31,5 +31,6 @@
     = f.association :studio
     br
   .form-actions
-    = f.button :submit
+    = f.button :button, "Update Game", type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Updating..."}
+
   br

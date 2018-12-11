@@ -6,6 +6,8 @@ class StudiosController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @studio.comments.order("created_at DESC")
   end
 
   def new
@@ -44,6 +46,6 @@ class StudiosController < ApplicationController
     end
 
     def set_studio
-      @studio = Studio.find(params[:id])
+      @studio = Studio.friendly.find(params[:id])
     end
 end
