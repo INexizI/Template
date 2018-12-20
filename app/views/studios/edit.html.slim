@@ -1,13 +1,11 @@
 title
-  | Edit game
+  | Edit Studio
 
 section
-  h1 Editing studio
+  h1 Change studio info
   - if current_user && current_user.admin
     == render 'form'
 
     .g-link
-      / p#a = link_to edit_studio_path(@studio) do
-      /       = image_tag("/images/icon/settings.svg")
       p#a = link_to studios_path do
             = image_tag("/images/icon/arrow-left.svg")

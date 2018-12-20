@@ -24,15 +24,3 @@ section
               =@user.birthday.strftime("%e %B")
       .profile-history
       .profile-info
-
-
-
-
-  / br
-  / = form_with model: [@user, @comment] do |f|
-  /   = f.text_field :body
-  /   = f.submit "Send"
-  /
-  / #comment_div
-  /   - @comments.each do |comment|
-  /     = render 'comments/comment', comment: comment

@@ -39,19 +39,3 @@ section
           br
           = link_to @game.studio.name, @game.studio
         br
-  br
-    p
-    | COMMENTS
-    - if user_signed_in?
-      br
-      = form_with model: [@game, @comment] do |f|
-        = f.text_field :body
-        = f.button "Send", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."}
-    - else
-      br
-      b
-        | Sign In to comment
-
-    #comment_div
-      - @comments.each do |comment|
-        = render 'comments/comment', comment: comment

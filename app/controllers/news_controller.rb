@@ -6,8 +6,6 @@ class NewsController < ApplicationController
   end
 
   def show
-    # @comment = Comment.new
-    # @comments = @news.comments.order("created_at DESC")
   end
 
   def new
@@ -15,11 +13,11 @@ class NewsController < ApplicationController
   end
 
   def game
-    @news = News.where( option: true )
+    @news = News.where( option: false )
   end
 
   def technology
-    @news = News.where( option: false )
+    @news = News.where( option: true )
   end
 
   def edit
@@ -44,7 +42,9 @@ class NewsController < ApplicationController
   end
 
   def destroy
+    @news = News.find(params[:id])
     @news.destroy
+    redirect_to @news
   end
 
   private

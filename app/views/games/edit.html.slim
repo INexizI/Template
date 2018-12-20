@@ -1,5 +1,5 @@
 title
-  | Edit game
+  | Edit Game
 
 section
   h1 Change game info
@@ -7,7 +7,5 @@ section
     == render 'form'
 
     .g-link
-      / p#a = link_to edit_game_path(@game) do
-      /       = image_tag("/images/icon/settings.svg")
       p#a = link_to games_path do
             = image_tag("/images/icon/arrow-left.svg")

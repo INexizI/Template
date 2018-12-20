@@ -14,6 +14,4 @@ class User < ActiveRecord::Base
   validates :realname, presence: true, length: {minimum: 4}
   validates :about, length: {maximum: 300}
   validates :password, length: {maximum: 6}
-
-  has_many :comments, dependent: :destroy
 end

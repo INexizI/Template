@@ -26,5 +26,5 @@
     br
     br
   .form-actions
-    = f.button :submit
+    = f.button :button, "Save News", type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving..."}
   br

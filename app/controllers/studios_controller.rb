@@ -6,8 +6,6 @@ class StudiosController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
-    @comments = @studio.comments.order("created_at DESC")
   end
 
   def new
