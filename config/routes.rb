@@ -5,9 +5,27 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :users, only: [:show, :edit, :update]
-  resources :games
-  resources :studios
-  resources :news
+  resources :games do
+    resources :comments, except: [:index, :new, :show] do
+      member do
+        get :reply
+      end
+    end
+  end
+  resources :studios do
+    resources :comments, except: [:index, :new, :show] do
+      member do
+        get :reply
+      end
+    end
+  end
+  resources :news do
+    resources :comments, except: [:index, :new, :show] do
+      member do
+        get :reply
+      end
+    end
+  end
 
   get 'games/genre/:tag', to: 'games#index', as: :tag
 

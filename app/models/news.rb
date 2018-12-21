@@ -5,4 +5,6 @@ class News < ApplicationRecord
   friendly_id :title, use: [ :slugged, :finders ]
 
   validates :title, presence: true
+
+  has_many :comments, as: :commentable, dependent: :destroy
 end

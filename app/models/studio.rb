@@ -5,4 +5,6 @@ class Studio < ApplicationRecord
   friendly_id :name, use: [ :slugged, :finders ]
 
   validates :name, presence: true
+
+  has_many :comments, as: :commentable, dependent: :destroy
 end

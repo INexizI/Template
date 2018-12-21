@@ -20,3 +20,5 @@ section
               = image_tag("/images/icon/settings.svg")
         p#a = link_to news_index_path do
               = image_tag("/images/icon/arrow-left.svg")
+
+  = render "comments/widget", commentable: @news

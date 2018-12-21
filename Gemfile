@@ -23,12 +23,14 @@ gem 'paperclip-i18n'
 gem 'mini_magick'
 gem 'file_validators'
 
+gem 'jquery-ui-rails'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 
 gem 'acts-as-taggable-on'
+gem 'rails-assets-tether'
 
 # gem 'therubyracer'
 # gem 'metro-ui-rails'

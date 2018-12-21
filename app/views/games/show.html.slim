@@ -39,3 +39,5 @@ section
           br
           = link_to @game.studio.name, @game.studio
         br
+
+  = render "comments/widget", commentable: @game

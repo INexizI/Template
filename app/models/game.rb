@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
   belongs_to :studio
+
   mount_uploader :poster, ImageUploader
 
   extend FriendlyId
@@ -9,4 +10,6 @@ class Game < ApplicationRecord
   acts_as_taggable_on :tags
 
   validates :title, presence: true
+
+  has_many :comments, as: :commentable, dependent: :destroy
 end
