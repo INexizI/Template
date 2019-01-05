@@ -1,19 +1,27 @@
 <div id="comment_<%= comment.id %>" class="comment">
   <div class="comment-info">
+    <div class="comment-user">
+      <%= link_to comment.user do %>
+        <%= image_tag comment.user.image.url, id:"c-img" %>
+      <% end %>
+      <%= link_to comment.user.username, comment.user, id:"c-name" %>
+    </div>
     <small>
-      <%= link_to comment.user.username, comment.user %> &bull;
-      <%= localize(comment.created_at, format: :long) %> &bull;
-      <%= link_to "Edit", edit_polymorphic_path([comment.commentable, comment]), class: 'edit-comment-link', remote: true  %> &bull;
-      <%= link_to "Destroy", [comment.commentable, comment], method: :delete, class: 'delete-comment-link', data:{confirm:"Are your sure?"}, remote: true %> &bull;
-      <!-- <%= link_to "Reply", polymorphic_path([:reply, comment.commentable, comment]), class: 'reply-comment-link', remote: true  %> -->
+      &bull;<%= localize(comment.created_at, format: :long) %> &bull;
+      <% if current_user == comment.user || current_user.admin %>
+        <%= link_to "Edit", edit_polymorphic_path([comment.commentable, comment]), class: 'edit-comment-link', remote: true  %> &bull;
+        <%= link_to "Destroy", [comment.commentable, comment], method: :delete, class: 'delete-comment-link', data:{confirm:"Are your sure?"}, remote: true %> &bull;
+        <!-- <%= link_to "Reply", polymorphic_path([:reply, comment.commentable, comment]), class: 'reply-comment-link', remote: true  %> -->
+      <% end %>
     </small>
   </div>
   <div class="comment-body">
-    <%= comment.body %>
+    <p><%= comment.body %></p>
+    <hr>
   </div>
   <% if comment.replies.any? %>
-    <p>
+    <ul>
       <%= render comment.replies %>
-    </p>
+    </ul>
   <% end %>
 </div>

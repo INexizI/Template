@@ -1,8 +1,8 @@
 <% if @comment.parent %>
-  $comment_parent = $("#comment_<%= @comment.parent.id %> > p");
+  $comment_parent = $("#comment_<%= @comment.parent.id %> > ul");
   if(!$comment_parent.length){
-    $("#comment_<%= @comment.parent.id %>").append("<p></p>");
-    $comment_parent = $("#comment_<%= @comment.parent.id %> > p");
+    $("#comment_<%= @comment.parent.id %>").append("<ul></ul>");
+    $comment_parent = $("#comment_<%= @comment.parent.id %> > ul");
   }
   $comment_form = $("#comment_<%= @comment.parent.id %> .comment-form form");
 <% else %>
@@ -21,7 +21,6 @@ $comments_count = $("#comments-count-of-commentable-<%= @commentable.id %>");
     $reply_link = $comment.find('a.reply-comment-link')[0]
     $reply_link.href = $restore_link.href + "/reply"
   <% end %>
-  $("#comment_new_chars_counter").html("Remaining : 255");
 <% else %>
   $comment_form.before("<div class='alert alert-warning alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><%= @comment.errors.full_messages.join('') %></div>").prev().delay(1500).slideUp();
 <% end %>

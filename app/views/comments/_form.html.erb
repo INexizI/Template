@@ -1,10 +1,9 @@
 <div class="comment-form">
   <%= simple_form_for [comment.commentable, comment], remote: true do | f | %>
     <%= f.hidden_field :parent_id %>
-    <%= f.input :body, label: false, placeholder: (f.object.parent_id.nil? ? 'Share your idea.' : 'Leave your reply.'), wrapper_html: { class: 'mb-1' }, input_html: { rows: 5, data:{ 'comment-id': (comment.persisted? ? comment.id : 'new') }} %>
-    <span id="comment_<%= comment.persisted? ? comment.id : 'new' %>_chars_counter" class="comment_chars_counter">Remaining : 255</span>
+    <%= f.input :body, label: false, placeholder: (f.object.parent_id.nil? ? 'Enter your comment' : 'Reply '), wrapper_html: { class: 'mb-1' }, input_html: { rows: 5, data:{ 'comment-id': (comment.persisted? ? comment.id : 'new') }} %>
     <div class='float-right'>
-      <%= f.submit class: 'btn btn-primary btn-sm float-xs-right' %>
+      <%= f.button :button, "Send Comment", type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."}  %>
       <%= link_to "Cancel", "#", 'data-reply': comment.parent_id.present?, class: 'cancel-comment-link btn btn-primary btn-sm float-xs-right ml-1' if comment.persisted? or comment.parent %>
     </div>
     <div class="clearfix"></div>

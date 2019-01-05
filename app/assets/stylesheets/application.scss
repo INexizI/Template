@@ -38,6 +38,10 @@ input, select, button, textarea {
   outline: none;
 }
 
+input, textarea {
+  padding-left: 5px;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -263,29 +267,6 @@ p.notice {
   display: block;
 }
 
-// .errors {
-//   background: rgb(231, 151, 145);
-//   padding: 5px;
-//   margin-bottom: 10px;
-//   min-width: 200px;
-//   display: inline-block;
-//   border: 1px solid rgb(231, 76, 60);
-//   border-radius: 7px;
-//   display: block;
-// }
-
-// .errors ul {
-//   margin: 0;
-//   padding: 0;
-//   list-style: none;
-// }
-
-// .success {
-//   background: rgb(128, 204, 160);
-//   padding: 5px;
-//   display: block;
-// }
-
 /*
   User Profile
 */
@@ -450,8 +431,8 @@ header.head {
 
 #user_about {
   height: 30px;
-  max-width: 450px;
-  max-height: 100px;
+  max-width: 290px;
+  max-height: 90px;
   min-width: 250px;
   min-height: 30px;
 }
@@ -482,42 +463,91 @@ header.head {
   margin-right: 10px;
 }
 
+#studio_logotype, #game_poster, #news_post_pic, #user_image {
+  padding: 1px 3px;
+  margin: 5px 0px;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background: #969696;
+  cursor: pointer;
+}
+
+#studio_description, #game_description, #news_news {
+  max-width: 100%;
+  max-height: 500px;
+  width: 170px;
+  height: 20px;
+  min-width: 170px;
+  min-height: 20px;
+}
+
 /*
   Comments settings
 */
 
-.c-comment {
-  display: flex;
+.comment-info small {
+  position: relative;
+  left: 50px;
+  top: -20px;
 }
+
+// .c-comment {
+//   display: flex;
+// }
 
 #c-img {
-  max-width: 32px;
-  max-height: 32px;
-  border-radius: 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
 }
 
-.c-head {
-  margin: 3px 0px 0px 10px;
+#c-name {
+  position: relative;
+  top: -20px;
+  left: -5px;
 }
 
-.c-user {
+// .c-head {
+//   margin: 3px 0px 0px 10px;
+// }
+
+.comment-user {
   font-family: 'PressStart2P';
   font-size: 0.8em;
 }
 
-.c-time {
-  font-size: small;
+.comment-user img {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
 }
 
-.c-delete {
-  float: right;
-  margin-top: -35px;
-}
+// .c-time {
+//   font-size: small;
+// }
+//
+// .c-delete {
+//   float: right;
+//   margin-top: -35px;
+// }
 
-.c-body {
+.comment-body {
   font-family: 'PressStart2P';
   font-size: 1em;
   padding: 5px 5px 10px 10px;
+}
+
+.comment-body p {
+  padding-bottom: 10px;
+}
+
+#comment_body {
+  max-width: 100%;
+  max-height: 500px;
+  min-width: 100%;
+  min-height: 100px;
 }
 
 /*
@@ -573,7 +603,7 @@ header.head {
   max-width: 120px;
   max-height: 200px;
   margin-left: 10px;
-  border: 0.8px solid #000;
+  border: 1px solid #000;
 }
 
 .g-sub {
