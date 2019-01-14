@@ -1,0 +1,44 @@
+section
+  .g-all
+    - @games.each do |game|
+      .g-block
+        .game-poster
+          .g-poster
+            = link_to game do
+              = image_tag(game.poster.url)
+              .g-info
+                .game-title = game.title
+          - if current_user && current_user.admin
+            .g-link
+              p#a = link_to game do
+                    = image_tag("/images/icon/search.svg")
+              p#a = link_to edit_game_path(game) do
+                    = image_tag("/images/icon/settings.svg")
+              p#a = link_to game, data: { confirm: 'Are you sure?' }, method: :delete do
+                    = image_tag("/images/icon/delete.svg")
+        .g-sub
+          #g-sub
+            .game-description
+              | Description:
+              br
+              = game.description
+            br
+            .game-release
+              | Release
+              br
+              = game.release.strftime("%e %B %Y")
+            br
+            .game-tag
+              | Genre
+              br
+            td
+            - game.tag_list.each do |tag|
+              = link_to tag, tag_path(tag: tag), id: "a"
+            br
+            br
+            .game-studio
+              | Studio
+              br
+              = link_to game.studio do
+                = image_tag game.studio.logotype.url(:thumb)
+            br
