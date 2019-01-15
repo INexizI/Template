@@ -4,7 +4,13 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    resources :comments, except: [:index, :new, :show] do
+      member do
+        get :reply
+      end
+    end
+  end
   resources :games do
     resources :comments, except: [:index, :new, :show] do
       member do
