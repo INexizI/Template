@@ -9,7 +9,7 @@ section
           = image_tag(@user.image.url(:thumb), alt: 'oops', id: "profile-avatar") if @user.image?
           .profile-settings
             = link_to edit_user_registration_path(current_user), id: "profile-img" do
-              = image_tag("/images/icon/settings.svg")
+              = image_tag("/images/icon/mail.svg")
             = link_to edit_user_registration_path(current_user), id: "profile-img" do
               = image_tag("/images/icon/settings.svg")
             = link_to edit_user_registration_path(current_user), id: "profile-img" do

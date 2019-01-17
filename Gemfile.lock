@@ -514,6 +514,8 @@ DEPENDENCIES
   chromedriver-helper
   clockwork
   coffee-rails
+  coffee-script
+  coffee-script-source
   dalli
   devise
   devise-doorkeeper

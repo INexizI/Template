@@ -50,6 +50,8 @@ group :beta, :production do
 end
 gem 'bourbon'
 gem 'coffee-rails'
+gem 'coffee-script'
+gem 'coffee-script-source'
 gem 'non-stupid-digest-assets'
 gem 'sassc-rails'
 

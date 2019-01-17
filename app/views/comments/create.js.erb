@@ -1,8 +1,8 @@
 <% if @comment.parent %>
-  $comment_parent = $("#comment_<%= @comment.parent.id %> > ul");
+  $comment_parent = $("#comment_<%= @comment.parent.id %> > p");
   if(!$comment_parent.length){
-    $("#comment_<%= @comment.parent.id %>").append("<ul></ul>");
-    $comment_parent = $("#comment_<%= @comment.parent.id %> > ul");
+    $("#comment_<%= @comment.parent.id %>").append("<p></p>");
+    $comment_parent = $("#comment_<%= @comment.parent.id %> > p");
   }
   $comment_form = $("#comment_<%= @comment.parent.id %> .comment-form form");
 <% else %>
