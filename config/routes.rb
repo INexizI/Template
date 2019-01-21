@@ -33,6 +33,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :conversations do
+    resources :messages
+  end
+
+  get 'mails', to: 'users#mail'
+
   get 'games/genre/:tag', to: 'games#index', as: :tag
 
   get 'announced', to: 'games#announced'
