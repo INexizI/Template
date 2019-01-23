@@ -481,7 +481,9 @@ header.head {
   min-height: 20px;
 }
 
-/* User Comments Style */
+/*
+  User Comments Style
+*/
 
 .user-comments {
   max-width: 950px;
@@ -501,6 +503,54 @@ header.head {
   max-height: 70px;
   min-width: 100%;
   min-height: 70px;
+}
+
+/*
+  Mailbox
+*/
+
+#mail-pic {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+#mail-user {
+  position: relative;
+  top: -10px;
+  right: -5px;
+  font-size: large;
+}
+
+#mail-head {
+  position: relative;
+  top: -30px;
+  left: 45px;
+}
+
+#mail-body {
+  position: relative;
+  top: -15px;
+  left: 40px;
+  font-size: small;
+  font-family: PressStart2P;
+}
+
+#message_body{
+  margin: 0px;
+  min-width: 843px;
+  min-height: 100px;
+  max-width: 843px;
+  max-height: 100px;
+}
+
+#new_message {
+  margin-top: 15px;
+}
+
+#mail-list {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*

@@ -71,8 +71,7 @@
               = link_to current_user.username, current_user
             ul
               li.submenu
-                a[href="/#"]
-                  | Mail
+                = link_to "Mail", conversations_path(current_user)
               li.submenu
                 = link_to "Settings", edit_user_registration_path(current_user)
               li.submenu
