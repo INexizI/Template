@@ -14,6 +14,7 @@
 //= require jquery
 //= require jquery3
 //= require jquery_ujs
+//= require jquery.easy-autocomplete
 //= require jquery.turbolinks
 //= require activestorage
 // = require turbolinks

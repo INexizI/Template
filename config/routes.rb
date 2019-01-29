@@ -47,4 +47,5 @@ Rails.application.routes.draw do
   get 'technology', to: 'news#technology'
   get 'game', to: 'news#game'
 
+  get :search, controller: :search
 end

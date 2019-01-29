@@ -1,0 +1,29 @@
+title
+  | Search result
+
+section
+  div
+    div
+      h1 Games
+      - @games.each do |game|
+        = link_to game.title, game
+        br
+    br
+    div
+      h1 Studios
+      - @studios.each do |studio|
+        = link_to studio.name, studio
+        br
+    br
+    div
+      h1 News
+      - @news.each do |news|
+        = link_to news.title, news
+        br
+    br
+    div
+      h1 Users
+      - @users.each do |user|
+        = link_to user.username, user
+        br
+    br

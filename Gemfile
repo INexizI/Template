@@ -31,6 +31,7 @@ gem 'font-awesome-sass'
 
 gem 'acts-as-taggable-on'
 gem 'rails-assets-tether'
+gem 'ransack'
 
 # gem 'therubyracer'
 # gem 'metro-ui-rails'

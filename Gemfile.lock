@@ -348,6 +348,11 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.2)
+    ransack (2.1.1)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
     rb-fchange (0.0.6)
       ffi
     rb-fsevent (0.10.3)
@@ -559,6 +564,7 @@ DEPENDENCIES
   rack-utf8_sanitizer
   rails
   rails-assets-tether
+  ransack
   rb-fchange
   rb-fsevent
   rb-inotify

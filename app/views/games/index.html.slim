@@ -2,7 +2,3 @@ title
   | Games
 
 = render 'games/game'
-
-  br
-  - if current_user && current_user.admin
-    = link_to 'New Game', new_game_path
