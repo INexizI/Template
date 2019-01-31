@@ -268,6 +268,87 @@ p.notice {
 }
 
 /*
+  Search bar
+*/
+
+.easy-autocomplete {
+  position: relative;
+}
+
+.easy-autocomplete input {
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+  color: #555;
+  float: none;
+}
+
+.easy-autocomplete input:hover, .easy-autocomplete input:focus {
+  box-shadow: none;
+}
+
+.easy-autocomplete a {
+  display: block;
+}
+
+.easy-autocomplete-container {
+  background-color: rgba(228, 228, 228, 0.9);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.easy-autocomplete-container ul {
+  display: none;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  position: relative;
+  top: -1px;
+}
+
+.easy-autocomplete-container ul li, .easy-autocomplete-container ul .eac-category {
+  display: block;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 4px 12px;
+}
+
+.easy-autocomplete-container ul li:last-child {
+  border-radius: 0 0 2px 2px;
+  border-width: 0 1px 1px;
+}
+
+.easy-autocomplete-container ul li.selected {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: none repeat scroll 0 0 rgb(235, 235, 235);
+  background-color: rgb(46, 46, 46);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.easy-autocomplete-container ul li.selected div {
+  font-weight: normal;
+}
+
+.easy-autocomplete-container ul li div {
+  display: block;
+  font-weight: normal;
+  word-break: break-all;
+}
+
+.easy-autocomplete-container ul li b {
+  font-weight: bold;
+}
+
+.easy-autocomplete-container ul .eac-category {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+/*
   User Profile
 */
 

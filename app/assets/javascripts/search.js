@@ -2,7 +2,7 @@ document.addEventListener("turbolinks:load", function() {
   $input = $("[data-behavior='autocomplete']")
 
   var options = {
-    getValue: "name" || "title" || 'usernamer',
+    getValue: "name",
     url: function(phrase) {
       return "/search.json?q=" + phrase;
     },
@@ -33,5 +33,5 @@ document.addEventListener("turbolinks:load", function() {
     }
   }
 
-  $input.easyAutocomplete(options)
+  $("#srch").easyAutocomplete(options)
 });

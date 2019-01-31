@@ -3,25 +3,25 @@ title
 
 section
   div
-    div
+    .srch-g
       h1 Games
       - @games.each do |game|
         = link_to game.title, game
         br
     br
-    div
+    .srch-s
       h1 Studios
       - @studios.each do |studio|
         = link_to studio.name, studio
         br
     br
-    div
+    .srch-n
       h1 News
       - @news.each do |news|
         = link_to news.title, news
         br
     br
-    div
+    .srch-u
       h1 Users
       - @users.each do |user|
         = link_to user.username, user

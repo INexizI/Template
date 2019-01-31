@@ -61,8 +61,8 @@
         /       | Development
   .input_search
     / input[type="search" placeholder="Search..." autocomplete="off"]
-    = form_with url: search_path, local: true, method: :get  do |f|
-      = f.text_field :q, placeholder: "Search", data: { behavior: "autocomplete" }
+    = form_with url: search_path, local: true, method: :get do |f|
+      = f.text_field :q, placeholder: "Search", data: { behavior: "autocomplete" }, id: "srch"
 
   - if user_signed_in?
     .user
