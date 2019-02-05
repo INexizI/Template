@@ -16,11 +16,6 @@ section
       .g-info-show
         .game-title = @game.title
         br
-        .game-description
-          | Description:
-          br
-          = @game.description
-        br
         .game-release
           | Release
           br
@@ -33,11 +28,19 @@ section
          - @game.tag_list.each do |tag|
           = link_to tag, tag_path(tag: tag), id: "a"
          br
-         br
+        br
+        .game-description
+          | Description:
+          br
+          = @game.description
+        br
+      .g-add-block-1
         .game-studio
           | Studio
           br
-          = link_to @game.studio.name, @game.studio
-        br
+          = link_to @game.studio do
+            = image_tag(@game.studio.logotype.url(:thumb))
+      .g-add-block-2
+    .g-add-block-3
 
   = render "comments/widget", commentable: @game
