@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_074022) do
+ActiveRecord::Schema.define(version: 2019_02_06_085626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 2019_01_21_074022) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.bigint "studio_id"
+    t.bigint "publisher_id"
+    t.index ["publisher_id"], name: "index_games_on_publisher_id"
     t.index ["slug"], name: "index_games_on_slug", unique: true
     t.index ["studio_id"], name: "index_games_on_studio_id"
   end
@@ -81,6 +83,16 @@ ActiveRecord::Schema.define(version: 2019_01_21_074022) do
     t.string "slug"
     t.boolean "option", default: false
     t.index ["slug"], name: "index_news_on_slug", unique: true
+  end
+
+  create_table "publishers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "logotype"
+    t.string "name"
+    t.text "description"
+    t.string "slug"
+    t.index ["slug"], name: "index_publishers_on_slug", unique: true
   end
 
   create_table "studios", force: :cascade do |t|
@@ -139,5 +151,6 @@ ActiveRecord::Schema.define(version: 2019_01_21_074022) do
   end
 
   add_foreign_key "comments", "users"
+  add_foreign_key "games", "publishers"
   add_foreign_key "games", "studios"
 end

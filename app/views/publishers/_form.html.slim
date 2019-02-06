@@ -1,0 +1,24 @@
+= simple_form_for(@publisher) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  br
+  .form-inputs
+    = f.label :name
+    br
+    = f.text_field :name
+    br
+    br
+    = f.label :description
+    br
+    = f.text_area :description
+    br
+    br
+    = f.label :logotype
+    br
+    = f.file_field :logotype
+    br
+    br
+
+  .form-actions
+    = f.button :button, "Save Publisher", type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving..."}
+  br

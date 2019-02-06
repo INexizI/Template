@@ -1,0 +1,24 @@
+title
+  | Publishers
+
+section
+  .g-all
+    - @publishers.each do |publisher|
+      .g-block
+        .game-poster
+          .g-poster
+            = link_to publisher do
+              = image_tag(publisher.logotype.url)
+              .g-info
+                .game-title = publisher.name
+          - if current_user && current_user.admin
+            .g-link
+              p#a = link_to publisher do
+                    = image_tag("/images/icon/search.svg")
+              p#a = link_to edit_publisher_path(publisher) do
+                    = image_tag("/images/icon/settings.svg")
+              p#a = link_to publisher, data: { confirm: 'Are you sure?' }, method: :delete do
+                    = image_tag("/images/icon/delete.svg")
+  br
+  - if current_user && current_user.admin
+    = link_to 'New Publisher', new_publisher_path

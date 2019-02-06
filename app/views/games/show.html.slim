@@ -35,7 +35,12 @@ section
           = @game.description
         br
       .g-add-block-1
-        .game-studio
+        .game-sub-img
+          | Publisher
+          br
+          = link_to @game.publisher do
+            = image_tag(@game.publisher.logotype.url(:thumb))
+        .game-sub-img
           | Studio
           br
           = link_to @game.studio do

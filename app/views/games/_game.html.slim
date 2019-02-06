@@ -41,4 +41,12 @@ section
               br
               = link_to game.studio do
                 = image_tag game.studio.logotype.url(:thumb)
+            .g-publisher
+              | Publisher
+              br
+              = link_to game.publisher do
+                = image_tag game.publisher.logotype.url(:thumb)
             br
+  br
+  - if current_user && current_user.admin
+    = link_to 'New Game', new_game_path

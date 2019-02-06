@@ -32,6 +32,13 @@ Rails.application.routes.draw do
       end
     end
   end
+  resources :publishers do
+    resources :comments, except: [:index, :new, :show] do
+      member do
+        get :reply
+      end
+    end
+  end
 
   resources :conversations do
     resources :messages

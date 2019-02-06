@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
   belongs_to :studio
+  belongs_to :publisher
 
   mount_uploader :poster, ImageUploader
 
