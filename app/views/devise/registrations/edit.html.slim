@@ -46,9 +46,6 @@ section
               = f.password_field :password_confirmation, required: false, input_html: { autocomplete: "new-password" }
               br
               br
-              abbr[title="required"]
-              | * 
-              // ~^^^ FIXED THIS! ^^^~
               = f.label :current_password
               br
               = f.password_field :current_password, required: true, input_html: { autocomplete: "current_password" }

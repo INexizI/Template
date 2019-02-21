@@ -1,0 +1,10 @@
+- if user_signed_in?
+  .star-rating
+    i#s1.fa.fa-star aria-hidden="true"
+    i#s2.fa.fa-star aria-hidden="true"
+    i#s3.fa.fa-star aria-hidden="true"
+    i#s4.fa.fa-star aria-hidden="true"
+    i#s5.fa.fa-star aria-hidden="true"
+
+script[type="text/javascript"]
+  |  $(document).ready(function(){ $("#s1").click(function(){ $(".fa-star").css("color", "grey"); $("#s1").css("color", "rgba(205, 185, 20, 1)"); }); $("#s2").click(function(){ $(".fa-star").css("color", "grey"); $("#s1, #s2").css("color", "rgba(205, 185, 20, 1)"); }); $("#s3").click(function(){ $(".fa-star").css("color", "grey"); $("#s1, #s2, #s3").css("color", "rgba(205, 185, 20, 1)"); }); $("#s4").click(function(){ $(".fa-star").css("color", "grey"); $("#s1, #s2, #s3, #s4").css("color", "rgba(205, 185, 20, 1)"); }); $("#s5").click(function(){ $(".fa-star").css("color", "grey"); $(".fa-star").css("color", "rgba(205, 185, 20, 1)"); }); });

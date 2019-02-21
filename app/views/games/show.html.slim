@@ -13,6 +13,7 @@ section
                   = image_tag("/images/icon/settings.svg")
             p#a = link_to games_path do
                   = image_tag("/images/icon/arrow-left.svg")
+          = render "rating"
       .g-info-show
         .game-title = @game.title
         br
