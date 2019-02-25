@@ -27,6 +27,6 @@
 /config/master.key
 
 .env
-
+public/uploads
 EXP
 EXP_TRASH

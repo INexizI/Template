@@ -1,0 +1,98 @@
+.inner
+  .logo
+    a[href="/"]
+      img[src="/images/icon/home.svg" alt="Nexiz"]
+  .main
+    ul.menu
+      li.menu_top
+        a[href="/games"]
+          | Games
+        ul.menu
+          li.submenu
+            a[href="/genres"]
+              | Genres
+          li.submenu
+            a[href="/studios"]
+              | Studios
+          li.submenu
+            a[href="/publishers"]
+              | Publishers
+          li.submenu
+            a[href="/announced"]
+              | Announced
+  .main
+    ul.menu
+      li.menu_top
+        a[href="/news"]
+          | News
+        ul
+          li.submenu
+            a[href="/game"]
+              | Game
+          li.submenu
+            a[href="/technology"]
+              | Technology
+  .main
+    ul.menu
+      li.menu_top
+        a[href="/communities"]
+          | Community
+        ul
+          li.submenu
+            a[href="#"]
+              | Forum
+          li.submenu
+            a[href="#"]
+              | Reviews
+          li.submenu
+            a[href="#"]
+              | Channels
+  .main
+    ul.menu
+      li.menu_top
+        a[href="/infos"]
+          img#inf[src="/images/icon/info.svg"]
+        / ul
+        /   li.submenu
+        /     a[href="#"]
+        /       | About
+        /   li.submenu
+        /     a[href="#"]
+        /       | Moderation
+        /   li.submenu
+        /     a[href="#"]
+        /       | Development
+  .input_search
+    / input[type="search" placeholder="Search..." autocomplete="off"]
+    = form_with url: search_path, local: true, method: :get do |f|
+      = f.text_field :q, placeholder: "Search", data: { behavior: "autocomplete" }, id: "srch"
+
+  - if user_signed_in?
+    .user
+      .userbox
+        ul.menu
+          li.menu_top
+            div
+              = link_to current_user.username, current_user
+            ul
+              li.submenu
+                = link_to "Mail", conversations_path(current_user)
+              li.submenu
+                = link_to "Settings", edit_user_registration_path(current_user)
+              li.submenu
+                = link_to "Sign out", destroy_user_session_path, :method => :delete
+      .userbox
+        ul.menu
+          li.menu_top
+            = link_to current_user do
+              = image_tag(current_user.image.url(:small_thumb))
+  - else
+    .main
+      ul.menu
+        li.menu_top
+          img#log[src="/images/icon/log-in.svg" alt="Profile"]
+          ul
+            li.submenu
+              = link_to 'Registration', new_user_registration_path
+            li.submenu
+              = link_to 'Login', new_user_session_path

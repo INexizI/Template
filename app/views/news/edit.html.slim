@@ -1,0 +1,11 @@
+title
+  | Edit News
+
+section
+  h1 Change news
+  - if current_user && current_user.admin
+    == render 'form'
+
+    .g-link
+      p#a = link_to news_path do
+            = image_tag("/images/icon/arrow-left.svg")

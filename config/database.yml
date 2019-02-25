@@ -13,6 +13,6 @@ production:
 
 test:
   <<: *defaults
-  host: localhost
-  username: postgres
-  database: newapp_test
+  host: <%= ENV['DATABASE_HOST_TEST'] %>
+  username: <%= ENV['DATABASE_USERNAME_TEST'] %>
+  database: <%= ENV['DATABASE_NAME_TEST'] %>

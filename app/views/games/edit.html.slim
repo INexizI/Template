@@ -1,0 +1,11 @@
+title
+  | Edit Game
+
+section
+  h1 Change game info
+  - if current_user && current_user.admin
+    == render 'form'
+
+    .g-link
+      p#a = link_to games_path do
+            = image_tag("/images/icon/arrow-left.svg")

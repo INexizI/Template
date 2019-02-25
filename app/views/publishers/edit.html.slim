@@ -1,0 +1,11 @@
+title
+  | Edit Publisher
+
+section
+  h1 Change publisher info
+  - if current_user && current_user.admin
+    == render 'form'
+
+    .g-link
+      p#a = link_to publishers_path do
+            = image_tag("/images/icon/arrow-left.svg")

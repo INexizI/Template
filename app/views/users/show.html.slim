@@ -1,0 +1,29 @@
+title
+  = @user.username
+
+section
+  .profile
+    .profile-head
+      .profile-main
+        .profile-avatar
+          = image_tag(@user.image.url(:thumb), alt: 'oops', id: "profile-avatar") if @user.image?
+          .profile-settings
+            = link_to conversations_path(current_user), class: "item", id: "profile-img" do
+              = image_tag("/images/icon/mail.svg")
+            = link_to edit_user_registration_path(current_user), id: "profile-img" do
+              = image_tag("/images/icon/settings.svg")
+            = link_to edit_user_registration_path(current_user), id: "profile-img" do
+              = image_tag("/images/icon/settings.svg")
+        .profile-header
+          .profile-username
+            = @user.username
+          .profile-misc
+            span#a
+              = @user.realname
+            span#a
+              = @user.birthday.strftime("%e %B")
+      .profile-history
+      .profile-info
+
+  .user-comments
+    = render "comments/widget", commentable: @user

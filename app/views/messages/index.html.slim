@@ -1,0 +1,29 @@
+title
+  | Mails
+
+section
+  - if @over_ten
+    = link_to 'Show Previous', '?m=all'
+  .ui.segment#mail-list
+    - @messages.each do |message|
+      - if message.body
+        - user = User.find(message.user_id)
+        .item
+          .content
+            .header
+              strong
+                = image_tag(user.image.url(:small_thumb), id: "mail-pic")
+                #mail-head
+                  = user.username
+                  |   •  
+                  = message.message_time
+            .list#mail-body
+              .item
+                = message.body
+                
+  = form_for [@conversation, @message], html: {class: "ui reply form"} do |f|
+    .field
+      = f.text_area :body
+      = f.text_field :user_id, value: current_user.id, type: "hidden"
+    div
+      = f.button :Send, type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."}

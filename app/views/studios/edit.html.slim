@@ -1,0 +1,11 @@
+title
+  | Edit Studio
+
+section
+  h1 Change studio info
+  - if current_user && current_user.admin
+    == render 'form'
+
+    .g-link
+      p#a = link_to studios_path do
+            = image_tag("/images/icon/arrow-left.svg")

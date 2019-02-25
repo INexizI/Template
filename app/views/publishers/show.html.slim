@@ -1,0 +1,25 @@
+title
+  | Publishers
+
+section
+  .g-all
+    .g-block-show
+      .game-poster
+        .g-poster
+          = image_tag(@publisher.logotype.url)
+        - if current_user && current_user.admin
+          .link
+            p#a = link_to edit_publisher_path(@publisher) do
+                  = image_tag("/images/icon/settings.svg")
+            p#a = link_to publishers_path do
+                  = image_tag("/images/icon/arrow-left.svg")
+      .g-info-show
+        .game-title = @publisher.name
+        br
+        .game-description
+          | Description:
+          br
+          = @publisher.description
+        br
+
+    = render "comments/widget", commentable: @publisher

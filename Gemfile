@@ -11,12 +11,27 @@ gem 'faye'
 gem 'thin'
 
 gem 'bcrypt'
-
 gem 'cancancan'
 
 gem 'i18n'
-
 gem 'rack-utf8_sanitizer'
+
+gem 'friendly_id'
+gem 'carrierwave'
+gem 'paperclip'
+gem 'paperclip-i18n'
+gem 'mini_magick'
+gem 'file_validators'
+
+gem 'jquery-ui-rails'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+gem 'font-awesome-rails'
+gem 'font-awesome-sass'
+
+gem 'acts-as-taggable-on'
+gem 'rails-assets-tether'
+gem 'ransack'
 
 # gem 'therubyracer'
 # gem 'metro-ui-rails'
@@ -36,6 +51,8 @@ group :beta, :production do
 end
 gem 'bourbon'
 gem 'coffee-rails'
+gem 'coffee-script'
+gem 'coffee-script-source'
 gem 'non-stupid-digest-assets'
 gem 'sassc-rails'
 
@@ -72,8 +89,6 @@ gem 'open_uri_redirections'
 gem 'actionpack-action_caching'
 gem 'attr_extras'
 gem 'nokogiri'
-gem 'paperclip'
-gem 'paperclip-i18n'
 gem 'simple_form'
 # gem 'simple_form-magic_submit'
 gem 'state_machine'

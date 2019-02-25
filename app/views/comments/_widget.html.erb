@@ -1,0 +1,9 @@
+<div id="comments-widget-of-commentable-<%= commentable.id %>" class="comments-widget">
+  <h2 class="comments-header">
+    Comments <small id="comments-count-of-commentable-<%= commentable.id %>"><%= commentable.comments.size %></small>
+  </h2>
+  <%= render "comments/form", comment: commentable.comments.build  %>
+  <ul class="comments-list">
+    <%= render commentable.comments.where(parent: nil).order('created_at ASC') %>
+  </ul>
+</div>

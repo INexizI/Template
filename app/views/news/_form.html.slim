@@ -1,0 +1,30 @@
+= simple_form_for(@news) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    br
+    = f.label :title
+    br
+    = f.text_field :title
+    br
+    br
+    = f.label :post_pic
+    br
+    = f.file_field :post_pic
+    br
+    br
+    = f.label :news
+    br
+    = f.text_area :news
+    br
+    br
+    = f.check_box :option
+    | 
+    strong
+      = f.label "Mark, if news about technology!~"
+    br
+    br
+  .form-actions
+    = f.button :button, "Save News", type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving..."}
+  br

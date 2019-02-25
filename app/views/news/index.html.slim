@@ -1,0 +1,28 @@
+title
+  | News
+
+section
+  - @news.each do |news|
+    .n-body
+      .i-img
+        = link_to news do
+          = image_tag news.post_pic.url(:thumb)
+      .n-news
+        .n-title
+          h2
+            = link_to news do
+              = news.title
+        .n-text
+          = news.news
+    - if current_user && current_user.admin
+      .g-link
+        p#a = link_to news do
+              = image_tag("/images/icon/search.svg")
+        p#a = link_to edit_news_path(news) do
+              = image_tag("/images/icon/settings.svg")
+        p#a = link_to news, data: { confirm: 'Are you sure?' }, method: :delete do
+              = image_tag("/images/icon/x.svg")
+    br
+
+  - if current_user && current_user.admin
+    = link_to 'New News', new_news_path

@@ -1,0 +1,11 @@
+<div class="comment-form">
+  <%= simple_form_for [comment.commentable, comment], remote: true do | f | %>
+    <%= f.hidden_field :parent_id %>
+    <%= f.input :body, label: false, placeholder: (f.object.parent_id.nil? ? 'Enter your comment' : 'Reply '), input_html: { rows: 5, data:{ 'comment-id': (comment.persisted? ? comment.id : 'new') }} %>
+    <div>
+      <%= f.button :button, "Send Comment", type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Sending..."}  %>
+      <%= link_to "Cancel", "#", 'data-reply': comment.parent_id.present?, class: 'cancel-comment-link' if comment.persisted? or comment.parent %>
+    </div>
+    <div class="clearfix"></div>
+  <% end %>
+</div>

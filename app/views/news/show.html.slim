@@ -1,0 +1,24 @@
+title
+  | News
+
+section
+  .n-body
+    .i-img
+      = link_to @news do
+        = image_tag @news.post_pic.url(:thumb)
+    .n-news
+      .n-title
+        h2
+          = link_to @news do
+            = @news.title
+      .n-text
+        = @news.news
+  br
+    - if current_user && current_user.admin
+      .g-link
+        p#a = link_to edit_news_path(@news) do
+              = image_tag("/images/icon/settings.svg")
+        p#a = link_to news_index_path do
+              = image_tag("/images/icon/arrow-left.svg")
+
+  = render "comments/widget", commentable: @news

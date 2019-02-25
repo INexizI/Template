@@ -1,0 +1,54 @@
+title
+  | Games
+
+section
+  .g-all
+    .g-block-show
+      .game-poster
+        .g-poster
+          = image_tag(@game.poster.url)
+        - if current_user && current_user.admin
+          .link
+            p#a = link_to edit_game_path(@game) do
+                  = image_tag("/images/icon/settings.svg")
+            p#a = link_to games_path do
+                  = image_tag("/images/icon/arrow-left.svg")
+      .g-info-show
+        .game-title = @game.title
+        br
+        .game-release
+          | Release
+          br
+          = @game.release.strftime("%e %B %Y")
+        br
+        .game-tag
+          | Genre
+          br
+        td
+         - @game.tag_list.each do |tag|
+          = link_to tag, tag_path(tag: tag), id: "a"
+         br
+        br
+        .game-description
+          | Description:
+          br
+          = @game.description
+        br
+      .g-add-block-1
+        .game-sub-img
+          | Publisher
+          br
+          = link_to @game.publisher do
+            = image_tag(@game.publisher.logotype.url(:thumb))
+        .game-sub-img
+          | Studio
+          br
+          = link_to @game.studio do
+            = image_tag(@game.studio.logotype.url(:thumb))
+      .g-add-block-2
+        div class=("rating data-score=#{@game.rating}")
+        #g-rating
+
+    .g-add-block-3
+
+  = render "comments/widget", commentable: @game
