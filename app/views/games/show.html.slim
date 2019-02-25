@@ -13,7 +13,6 @@ section
                   = image_tag("/images/icon/settings.svg")
             p#a = link_to games_path do
                   = image_tag("/images/icon/arrow-left.svg")
-          / = render "rating"
       .g-info-show
         .game-title = @game.title
         br
@@ -47,10 +46,9 @@ section
           = link_to @game.studio do
             = image_tag(@game.studio.logotype.url(:thumb))
       .g-add-block-2
-        .rating data-score="#{@game.rating}"
+        div class=("rating data-score=#{@game.rating}")
+        #g-rating
+
     .g-add-block-3
 
   = render "comments/widget", commentable: @game
-
-  script
-    |  $(".rating").raty({ path: "/assets/", score: function() { return $(this).attr('data-score'); } });

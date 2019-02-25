@@ -11,6 +11,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    # @game.rating.average(:rating)
   end
 
   def new

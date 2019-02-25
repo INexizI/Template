@@ -13,4 +13,8 @@ class Game < ApplicationRecord
   validates :title, presence: true
 
   has_many :comments, as: :commentable, dependent: :destroy
+
+  def average(rating)
+    calculate(:average, rating)
+  end
 end

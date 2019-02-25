@@ -803,6 +803,7 @@ header.head {
   width: 300px;
   position: relative;
   left: 200px;
+  display: flex;
 }
 
 .g-add-block-3 {
@@ -815,9 +816,18 @@ header.head {
   Score settings
 */
 
-.fa-star {
-    font-size: 30px;
-    color: grey;
+.rating {
+  font-size: 23px;
+  padding: 5px 3px 5px 0px;
+}
+
+#g-rating {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 5px 5px 0px 0px;
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
 /*
