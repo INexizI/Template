@@ -1,0 +1,13 @@
+<div class="raty">
+  <%= simple_form_for(@game) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <br>
+    <div class="form-inputs">
+      <div class="rating" data-score="<%= @game.rating %>">
+    </div>
+    <div class="form-actions">
+      <%= f.button :button, id:"rating-submit", type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving..."} %>
+    </div>
+  <% end %>
+</div>

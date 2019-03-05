@@ -191,7 +191,7 @@
 
       return cancel;
     }, _createScore: function() {
-      return $('<input />', { type: 'hidden', name: this.opt.scoreName }).appendTo(this);
+      return $('<input />', { type: 'hidden', name: this.opt.scoreName, id: "rate" }).appendTo(this);
     }, _createStars: function() {
       var that = $(this);
 

@@ -14,7 +14,7 @@ class Game < ApplicationRecord
 
   has_many :comments, as: :commentable, dependent: :destroy
 
-  def average(rating)
-    calculate(:average, rating)
-  end
+  # def average(rating)
+  #   calculate(:average, rating)
+  # end
 end

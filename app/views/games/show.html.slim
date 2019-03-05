@@ -46,9 +46,9 @@ section
           = link_to @game.studio do
             = image_tag(@game.studio.logotype.url(:thumb))
       .g-add-block-2
-        div class=("rating data-score=#{@game.rating}")
         #g-rating
-
-    .g-add-block-3
+        = render "rate"
+        
+  .g-add-block-3
 
   = render "comments/widget", commentable: @game

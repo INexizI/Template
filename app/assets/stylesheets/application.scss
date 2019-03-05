@@ -709,7 +709,7 @@ header.head {
 */
 
 .g-all {
-  max-width: 900px;
+  // max-width: 900px;
 }
 
 .g-block {
@@ -795,14 +795,14 @@ header.head {
 .g-add-block-1 {
   width: 400px;
   position: relative;
-  left: 195px;
+  left: 60px;
 }
 
 .g-add-block-2 {
   background-color: aqua;
-  width: 300px;
+  width: 220px;
   position: relative;
-  left: 200px;
+  left: 0px;
   display: flex;
 }
 
@@ -825,9 +825,19 @@ header.head {
   width: 20px;
   height: 20px;
   text-align: center;
-  padding: 5px 5px 0px 0px;
   font-size: 1.4em;
   font-weight: bold;
+  position: relative;
+  left: 185px;
+  top: 7px;
+}
+
+.raty {
+  margin: -15px 0px 0px -15px;
+}
+
+#rating-submit {
+  display: none;
 }
 
 /*
