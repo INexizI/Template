@@ -1,0 +1,11 @@
+= simple_form_for(@user_score) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  br
+  .form-inputs
+    .urating
+    #u-rating
+  .form-actions
+    = f.button :button, type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving..."}
+
+  br

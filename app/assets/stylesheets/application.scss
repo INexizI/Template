@@ -545,7 +545,7 @@ header.head {
   margin-right: 10px;
 }
 
-#studio_logotype, #game_poster, #news_post_pic, #user_image {
+#studio_logotype, #publisher_logotype, #game_poster, #news_post_pic, #user_image {
   padding: 1px 3px;
   margin: 5px 0px;
   color: black;
@@ -554,7 +554,7 @@ header.head {
   cursor: pointer;
 }
 
-#studio_description, #game_description, #news_news {
+#studio_description, #publisher_description, #game_description, #news_news {
   max-width: 100%;
   max-height: 500px;
   width: 170px;
@@ -645,10 +645,6 @@ header.head {
   top: -20px;
 }
 
-// .c-comment {
-//   display: flex;
-// }
-
 #c-img {
   width: 40px;
   height: 40px;
@@ -662,10 +658,6 @@ header.head {
   left: -5px;
 }
 
-// .c-head {
-//   margin: 3px 0px 0px 10px;
-// }
-
 .comment-user {
   font-family: 'PressStart2P';
   font-size: 0.8em;
@@ -677,15 +669,6 @@ header.head {
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 50%;
 }
-
-// .c-time {
-//   font-size: small;
-// }
-//
-// .c-delete {
-//   float: right;
-//   margin-top: -35px;
-// }
 
 .comment-body {
   font-family: 'PressStart2P';
@@ -758,7 +741,7 @@ header.head {
   max-width: 120px;
   max-height: 200px;
   margin-left: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .game-sub-img {
@@ -783,10 +766,17 @@ header.head {
   bottom: 230px;
 }
 
+.g-studio a img, .g-publisher a img {
+  width: 150px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+
 #g-sub {
-  width: 220px;
+  width: 170px;
   height: auto;
-  background: rgb(226, 226, 226);
+  background: rgb(220, 220, 220);
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 10px 0px 0px 20px;
@@ -832,11 +822,23 @@ header.head {
   top: 7px;
 }
 
+#u-rating {
+  position: relative;
+  top: -20px;
+  left: 130px;
+  font-size: larger;
+  font-weight: bold;
+}
+
 .raty {
   margin: -15px 0px 0px -15px;
 }
 
-#rating-submit {
+.uraty {
+  padding: 10px 5px 5px 10px;
+}
+
+#rating-submit, #urating-submit {
   display: none;
 }
 

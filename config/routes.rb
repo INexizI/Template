@@ -2,9 +2,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :user_scores
+
   root to: "home#index"
 
   resources :users, only: [:show, :edit, :update] do
+    resources :user_scores
     resources :comments, except: [:index, :new, :show] do
       member do
         get :reply
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
   resources :games do
+    resources :user_scores
     resources :comments, except: [:index, :new, :show] do
       member do
         get :reply

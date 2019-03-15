@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_103328) do
+ActiveRecord::Schema.define(version: 2019_03_12_142730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,10 +58,12 @@ ActiveRecord::Schema.define(version: 2019_02_27_103328) do
     t.string "slug"
     t.bigint "studio_id"
     t.bigint "publisher_id"
-    t.integer "rating"
+    t.float "rating"
+    t.bigint "user_score_id"
     t.index ["publisher_id"], name: "index_games_on_publisher_id"
     t.index ["slug"], name: "index_games_on_slug", unique: true
     t.index ["studio_id"], name: "index_games_on_studio_id"
+    t.index ["user_score_id"], name: "index_games_on_user_score_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -131,6 +133,16 @@ ActiveRecord::Schema.define(version: 2019_02_27_103328) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "user_scores", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.float "uscore"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_user_scores_on_game_id"
+    t.index ["user_id"], name: "index_user_scores_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -154,4 +166,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_103328) do
   add_foreign_key "comments", "users"
   add_foreign_key "games", "publishers"
   add_foreign_key "games", "studios"
+  add_foreign_key "games", "user_scores"
+  add_foreign_key "user_scores", "games"
+  add_foreign_key "user_scores", "users"
 end
