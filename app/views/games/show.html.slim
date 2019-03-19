@@ -46,8 +46,11 @@ section
           = link_to @game.studio do
             = image_tag(@game.studio.logotype.url(:thumb))
       .g-add-block-2
-        #g-rating
-        = render "rate"
+        .g-rating
+          #g-rating
+          = render "rate"
+      .g-subblock-2
+
 
   .g-add-block-3
 

@@ -354,7 +354,6 @@ p.notice {
 */
 
 .profile {
-  // position: absolute;
   margin-left: auto;
   margin-right: auto;
   width: 970px;
@@ -362,7 +361,6 @@ p.notice {
 }
 
 .profile-head {
-  // position: absolute;
   width: 970px;
   height: 240px;
   border-radius: 5px;
@@ -721,6 +719,7 @@ header.head {
   width: 300px;
   height: 400px;
   margin-left: 40px;
+  padding: 15px 5px 5px 0px;
 }
 
 .game-title {
@@ -730,6 +729,7 @@ header.head {
 
 .game-poster {
   min-width: 142px;
+  padding: 15px 0px 5px 15px;
 }
 
 .game-poster a {
@@ -793,7 +793,20 @@ header.head {
   width: 220px;
   position: relative;
   left: 0px;
+}
+
+.g-rating {
   display: flex;
+  width: 215px;
+  height: 40px;
+}
+
+.g-subblock-2 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .g-add-block-3 {
