@@ -1,0 +1,6 @@
+<div id="scores-widget-of-scorable-<%= scorable.id %>" class="scores-widget">
+  <p>
+    <%= render scorable.scores.where(user_id: current_user.id) %>
+    <%= render "scores/form", score: scorable.scores.new %>
+  </p>
+</div>

@@ -50,8 +50,10 @@ section
           #g-rating
           = render "rate"
       .g-subblock-2
-
-
   .g-add-block-3
+    / .u-rating
+    /   = render "scores/widget", scorable: @game
+    /   #u-rating
 
-  = render "comments/widget", commentable: @game
+  .comm
+    = render "comments/widget", commentable: @game

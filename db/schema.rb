@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_142730) do
+ActiveRecord::Schema.define(version: 2019_03_19_114650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,17 @@ ActiveRecord::Schema.define(version: 2019_03_12_142730) do
     t.index ["slug"], name: "index_publishers_on_slug", unique: true
   end
 
+  create_table "scores", force: :cascade do |t|
+    t.string "scorable_type"
+    t.bigint "scorable_id"
+    t.bigint "user_id"
+    t.float "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scorable_type", "scorable_id"], name: "index_scores_on_scorable_type_and_scorable_id"
+    t.index ["user_id"], name: "index_scores_on_user_id"
+  end
+
   create_table "studios", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -167,6 +178,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_142730) do
   add_foreign_key "games", "publishers"
   add_foreign_key "games", "studios"
   add_foreign_key "games", "user_scores"
+  add_foreign_key "scores", "users"
   add_foreign_key "user_scores", "games"
   add_foreign_key "user_scores", "users"
 end

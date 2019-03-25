@@ -51,22 +51,22 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_commentable
-    resource, id = request.path.split('/')[1,2]
-    @commentable = resource.singularize.classify.constantize.find(id)
-  end
-
-  def set_comment
-    begin
-      @comment = @commentable.comments.find(params[:id])
-    rescue => e
-      logger.error "#{e.class.name} : #{e.message}"
-      @comment = @commentable.comments.build
-      @comment.errors.add(:base, :recordnotfound, message: "That record doesn't exist. Maybe, it is already destroyed.")
+    def set_commentable
+      resource, id = request.path.split('/')[1,2]
+      @commentable = resource.singularize.classify.constantize.find(id)
     end
-  end
 
-  def comment_params
-    params.require(:comment).permit(:body)
-  end
+    def set_comment
+      begin
+        @comment = @commentable.comments.find(params[:id])
+      rescue => e
+        logger.error "#{e.class.name} : #{e.message}"
+        @comment = @commentable.comments.build
+        @comment.errors.add(:base, :recordnotfound, message: "That record doesn't exist. Maybe, it is already destroyed.")
+      end
+    end
+
+    def comment_params
+      params.require(:comment).permit(:body)
+    end
 end

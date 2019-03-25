@@ -1,0 +1,10 @@
+<div class="uraty">
+  <%= simple_form_for [score.scorable, score] do |f| %>
+    <div class="form-inputs">
+      <div class="urating" data-score="<%= score.score %>">
+      </div>
+    <div class="form-actions">
+      <%= f.button :button, id:"urating-submit", type: :submit, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving..."} %>
+    </div>
+  <% end %>
+</div>

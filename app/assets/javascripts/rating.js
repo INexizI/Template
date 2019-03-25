@@ -25,7 +25,7 @@ document.addEventListener('turbolinks:load', function() {
     target: "#u-rating",
     targetType: "score",
     targetScore: "#u-rating",
-    scoreName: "user_score[uscore]",
+    scoreName: "score[score]",
     targetKeep: true,
     path: "/assets/",
     score: function() {

@@ -16,4 +16,5 @@ class User < ActiveRecord::Base
   validates :password, length: {maximum: 6}
 
   has_many :comments, as: :commentable, dependent: :destroy
+  has_many :scores, as: :scorable, dependent: :destroy
 end
