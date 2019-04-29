@@ -691,6 +691,7 @@ header.head {
 
 .g-all {
   // max-width: 900px;
+  margin-right: auto;
 }
 
 .g-block {
@@ -772,7 +773,6 @@ header.head {
   border-radius: 10px;
 }
 
-
 #g-sub {
   width: 170px;
   height: auto;
@@ -780,6 +780,7 @@ header.head {
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 10px 0px 0px 20px;
+  margin: 0px 5px 5px 10px;
 }
 
 .g-add-block-1 {
@@ -813,6 +814,25 @@ header.head {
   width: 1100px;
   height: 200px;
   background-color: darkorange;
+}
+
+.g-box {
+  display: flex;
+  width: 100%;
+}
+
+.g-search {
+  width: 300px;
+  height: auto;
+  background-color: darkseagreen;
+}
+
+.g-srch-title {
+  padding: 0px 5px;
+}
+
+.g-srch-tag {
+  padding: 3px 5px;
 }
 
 /*

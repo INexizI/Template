@@ -1,52 +1,68 @@
 section
-  .g-all
-    - @games.each do |game|
-      .g-block
-        .game-poster
-          .g-poster
-            = link_to game do
-              = image_tag(game.poster.url)
-              .g-info
-                .game-title = game.title
-          - if current_user && current_user.admin
-            .g-link
-              p#a = link_to game do
-                    = image_tag("/images/icon/search.svg")
-              p#a = link_to edit_game_path(game) do
-                    = image_tag("/images/icon/settings.svg")
-              p#a = link_to game, data: { confirm: 'Are you sure?' }, method: :delete do
-                    = image_tag("/images/icon/delete.svg")
-        .g-sub
-          #g-sub
-            .game-description
-              | Description:
+  .g-box
+    .g-all
+      - @games.each do |game|
+        .g-block
+          .game-poster
+            .g-poster
+              = link_to game do
+                = image_tag(game.poster.url)
+                .g-info
+                  .game-title = game.title
+            - if current_user && current_user.admin
+              .g-link
+                p#a = link_to game do
+                      = image_tag("/images/icon/search.svg")
+                p#a = link_to edit_game_path(game) do
+                      = image_tag("/images/icon/settings.svg")
+                p#a = link_to game, data: { confirm: 'Are you sure?' }, method: :delete do
+                      = image_tag("/images/icon/delete.svg")
+          .g-sub
+            #g-sub
+              .game-description
+                | Description:
+                br
+                = game.description
               br
-              = game.description
-            br
-            .game-release
-              | Release
+              .game-release
+                | Release
+                br
+                = game.release.strftime("%e %B %Y")
               br
-              = game.release.strftime("%e %B %Y")
-            br
-            .game-tag
-              | Genre
+              .game-tag
+                | Genre
+                br
+              td
+              - game.tag_list.each do |tag|
+                = link_to tag, tag_path(tag: tag), id: "a"
               br
-            td
-            - game.tag_list.each do |tag|
-              = link_to tag, tag_path(tag: tag), id: "a"
-            br
-            br
-            .g-studio
-              | Studio
               br
-              = link_to game.studio do
-                = image_tag game.studio.logotype.url(:thumb)
-            .g-publisher
-              | Publisher
+              .g-studio
+                | Studio
+                br
+                = link_to game.studio do
+                  = image_tag game.studio.logotype.url(:thumb)
+              .g-publisher
+                | Publisher
+                br
+                = link_to game.publisher do
+                  = image_tag game.publisher.logotype.url(:thumb)
               br
-              = link_to game.publisher do
-                = image_tag game.publisher.logotype.url(:thumb)
-            br
+
+    .g-search
+      span.g-srch-title
+        | Advance
+        br
+      br
+      span.g-srch-title
+        | Genre
+        br
+      br
+      .g-srch-tag
+        - @games.each do |game|
+          - game.tag_list.each do |tag|
+            = link_to tag, tag_path(tag: tag), id: "a"
+      br
   br
   - if current_user && current_user.admin
     = link_to 'New Game', new_game_path

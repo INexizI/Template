@@ -50,9 +50,9 @@ group :beta, :production do
   gem 'autoprefixer-rails'
 end
 gem 'bourbon'
-gem 'coffee-rails'
-gem 'coffee-script'
-gem 'coffee-script-source'
+# gem 'coffee-rails'
+# gem 'coffee-script'
+# gem 'coffee-script-source'
 gem 'non-stupid-digest-assets'
 gem 'sassc-rails'
 
@@ -82,8 +82,8 @@ gem 'responders'
 gem 'zaru'
 
 gem 'apipie-rails'
-gem 'gcm'
-gem 'maruku'
+# gem 'gcm'
+# gem 'maruku'
 gem 'open_uri_redirections'
 
 gem 'actionpack-action_caching'
@@ -93,12 +93,6 @@ gem 'simple_form'
 # gem 'simple_form-magic_submit'
 gem 'state_machine'
 gem 'active_model_serializers'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 gem 'bootsnap', require: false
 
